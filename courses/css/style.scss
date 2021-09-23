@@ -43,15 +43,20 @@ header{
 	display: flex;
 	height: 72px; 
 	justify-content: space-between;
+	align-items: center;
 	& img{
 		height: 100%;
 		object-fit: none;
+	}
+	@media (max-width:1411px) {
+		height: 52px;
 	}
 	@media (max-width:425px) {
 		display: flex;
 		flex-direction: row-reverse;
 		align-items: center;
 		padding-top: 20px;
+		height: auto;
 	}
 }
 @media (max-width:425px) {
@@ -149,23 +154,51 @@ header{
 	left: 50%;
 	transform: skewX(-20deg) translate(-50%,-100%);
 }
+
 .button__menu{
+	align-self: flex-start;
 	width: 156px;
-	height: 72px;
+	max-height: 72px;
+	min-height: 72px;
 	background: #fff;
 	border-radius: 0 0 1.125rem 1.125rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	text-align: center;
 	font-size: 1.125rem;
 	font-weight: 700;
 	color: #585858;
 	cursor: pointer;
+	transition: all .8s;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	z-index: 10000;
+	position: relative;
+	&:hover{
+		background: #ff5d54;
+		color: #fff;
+		max-height: 500px;
+		& .button__menu__more{
+			opacity: 1;
+		}
+	}
+	& span{
+		position: absolute;
+		top: 36px;
+		left: 50%;
+		transform: translate(-50%,-50%);
+	}
+	@media (max-width:1411px){
+		& span{
+			top: 26px;
+		}
+	}
 	@media (max-width: 425px) {
 		display: none;
+
 	}
 	&_active{
-		background: #d9635d;
+		background: #ff5d54;
 		color: #ffffff;
 		@media (max-width: 425px) {
 			display: flex;
@@ -179,9 +212,32 @@ header{
 			padding-right: 15px;
 		}
 	}
+	&__more{
+		//display: none;
+		position: relative;
+		margin-top: 70px;
+		display: flex;
+		flex-direction: column;
+		font-size: 15px;
+		font-weight: 400;
+		opacity: 0;
+		transition: opacity .8s;
+		margin-bottom: 20px;
+		padding: 0 10px;
+		& a{
+			margin-bottom: 15px;
+		}
+		@media (max-width:1411px) {
+			font-size: 10px;
+			& a{
+				margin-bottom: 15px;
+			}
+		}
+	}
 	@media (max-width: 1411px) {
 		width: 112px;
-		height: 52px;
+		max-height: 52px;
+		min-height: 52px;
 		font-size: 0.813rem;
 	}
 }
@@ -194,15 +250,13 @@ header{
 	background: url('/img/Words.png');
 	background-size: contain;
 	background-repeat: no-repeat;
+	background-position: center;
 	padding-bottom: 110px;
-	@media (max-width: 1411px) {
-		background: url('/img/Flower.png');
-		background-position: center 250px;
-		background-repeat: no-repeat;
-	}
+	overflow: hidden;
 	@media (max-width:425px) {
-		background: url('/img/Flower.png') fixed center 300px no-repeat;
-		background-size: 80%;
+		background: none;
+	}
+	@media (max-width:1411px) {
 		margin-top: 60px;
 	}
 }
@@ -213,8 +267,19 @@ header{
 	font-size: 3.063rem;
 	font-weight: 700;
 	text-align: center;
+	@media (max-width:1411px) {
+		font-size: 34px;
+	}
 	@media (max-width:425px) {
 		font-size: 1.25rem;
+	}
+}
+@keyframes cardsStart {
+	from{
+		transform: translateY(500px);
+	}
+	to{
+		transform: translateY(0px);
 	}
 }
 .main__cards{
@@ -227,20 +292,28 @@ header{
 		justify-content: center;
 		margin-top: 30px;
 	}
+	&__noise{
+		position: absolute;
+		left: 0;
+		top: 0;
+		opacity: 0.03;
+	}
 	&__column{
 		flex: 0 1 33.33%;
 		padding: 0 10px;
 		margin-bottom: 20px;
 	}
 	&__card{
-		background: rgba(0,0,0,0);
+		background-color: rgba(255,255,255,0.3);
 		backdrop-filter: blur(25px);
-		border-radius: 2rem;
+		border-radius: 0.95rem;
 		padding-top: 40px;
 		padding-left: 40px;
 		padding-right: 40px;
 		overflow: hidden;
 		border: 1px solid rgba(255,255,255,0.5);
+		animation: cardsStart 1.5s forwards;
+		transform: translateY(500px);
 		@media (max-width: 1411px) {
 			padding-bottom: 30px;
 			padding-left: 30px;
@@ -254,6 +327,8 @@ header{
 		color: #585858;
 		font-size: 1.5rem;
 		font-weight: 400;
+		z-index: 10;
+		position: relative;
 		@media (max-width: 1411px) {
 			font-size: 1rem;
 		}
@@ -266,18 +341,20 @@ header{
 		flex-wrap: wrap;
 		justify-content: space-between;
 		margin-top: 30px;
+		z-index: 10;
 	}
 	&__select{
 		padding: 20px 20px;
 		background: #fff;
-		border-radius: .5rem;
-		color: #ff504f;
+		border-radius: 10px;
+		color: #fc5b53;
 		font-size: 1.5rem;
 		font-weight: 500;
 		white-space: nowrap;
 		margin-bottom: 20px;
 		transition: all .3s;
 		cursor: pointer;
+		z-index: 10;
 		&:hover{
 			background: #f45f57;
 			color: #fdfdfd;
@@ -308,6 +385,8 @@ header{
 		color: #f45f57;
 		font-size: 2.2rem;
 		font-weight: 700; 
+		z-index: 10;
+		position: relative;
 		@media (max-width: 1411px) {
 			margin-left: 0;
 			margin-right: 0;
@@ -334,6 +413,8 @@ header{
 
 .footer{
 	background:#eae9e9;
+	z-index: 100;
+	position: relative;
 	&__wrapper{
 		display: flex;
 		min-height: 170px;
@@ -372,7 +453,7 @@ header{
 			flex-wrap: wrap;
 		}
 		&__nav a{
-			margin-right: 42px;
+			margin-right: 47.4px;
 			color: #e4665f;
 			font-size: 0.9rem;
 			font-weight: 300;
@@ -380,7 +461,8 @@ header{
 				margin-right: 0;
 			}
 			@media (max-width: 1411px) {
-				font-size: 0.7rem;
+				font-size: 10px;
+				margin-right: 37px;
 			}
 		}
 		&__more{
@@ -408,11 +490,15 @@ header{
 	}
 	&__nav{
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
 		min-height: 50px;
 	}
 	&__button{
-
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-size: 9px;
+		font-weight: 300;
 	}
 }
