@@ -322,14 +322,14 @@ header img {
   padding-bottom: 110px;
   overflow: hidden;
 }
-@media (max-width: 425px) {
-  .main {
-    background: none;
-  }
-}
 @media (max-width: 1411px) {
   .main {
     margin-top: 60px;
+  }
+}
+@media (max-width: 425px) {
+  .main {
+    background: none;
   }
 }
 
@@ -369,6 +369,26 @@ header img {
   to {
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
+  }
+}
+@-webkit-keyframes cardsStartWhite {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes cardsStartWhite {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 .main__cards {
@@ -416,6 +436,21 @@ header img {
           animation: cardsStart 1.5s forwards;
   -webkit-transform: translateY(500px);
           transform: translateY(500px);
+}
+.main__cards__card:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  z-index: 100;
+  visibility: visible;
+  -webkit-animation: cardsStartWhite 1.5s forwards;
+          animation: cardsStartWhite 1.5s forwards;
+  -webkit-animation-delay: inherit;
+          animation-delay: inherit;
 }
 @media (max-width: 1411px) {
   .main__cards__card {
