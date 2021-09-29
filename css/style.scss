@@ -67,6 +67,7 @@ body{
 #name{
 	margin-top: 20px;
 }
+
 .animScale{
 	animation: logoScale 0.8s 1.5s linear forwards;
 	transition: all 1s !important;
@@ -246,6 +247,14 @@ body{
 			margin-right: 0;
 		}
 	}
+	@media (max-width:450px) {
+		right: 0;
+		top: 35px;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		padding: 0 10%;
+	}
 }
 #phone{
 	transition: all .4s;
@@ -416,6 +425,7 @@ $anim_delay: 0.2s;
 	opacity: 0;
 	animation: textAnim $anim_duration $anim_delay linear forwards;
 }
+
 .logo__row{
 	display: flex;
 	align-items: flex-end;
@@ -556,5 +566,41 @@ footer{
 				font-size: 14px;
 			}
 		}
+	}
+}
+
+
+
+
+@media (max-width:450px) {
+	#studio{
+		width: 60px;
+	}
+	#why{
+		width: 130px;
+		height: auto;
+		margin-top: 8px;
+	}
+	#U{
+		width: 30px;
+		height: auto;
+		transform: translateX(-5px) !important;
+	}
+	#name{
+		color: #585858;
+		font-size: 13px;
+		font-weight: 400;
+	}
+	.footer{
+		display: none;
+	}
+}
+.footer__mob{
+	position: absolute;
+	bottom: 0;
+	&__item{
+		height: 70px;
+		width: 70px;
+		background: #000;
 	}
 }

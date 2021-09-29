@@ -364,6 +364,20 @@ body {
 .icons__icon:last-child {
   margin-right: 0;
 }
+@media (max-width: 450px) {
+  .icons {
+    right: 0;
+    top: 35px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 10%;
+  }
+}
 
 #phone {
   -webkit-transition: all 0.4s;
@@ -814,4 +828,42 @@ footer .container {
   .nav__button__end {
     font-size: 14px;
   }
+}
+
+@media (max-width: 450px) {
+  #studio {
+    width: 60px;
+  }
+
+  #why {
+    width: 130px;
+    height: auto;
+    margin-top: 8px;
+  }
+
+  #U {
+    width: 30px;
+    height: auto;
+    -webkit-transform: translateX(-5px) !important;
+            transform: translateX(-5px) !important;
+  }
+
+  #name {
+    color: #585858;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .footer {
+    display: none;
+  }
+}
+.footer__mob {
+  position: absolute;
+  bottom: 0;
+}
+.footer__mob__item {
+  height: 70px;
+  width: 70px;
+  background: #000;
 }
