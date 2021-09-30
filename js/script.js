@@ -71,6 +71,7 @@ $(document).ready(function(){
 		$(this).children('.footer__window').css('left','0')
 		$(this).children('.footer__window').css('top','0')
 		$(this).children('.footer__window').css('opacity','1')
+		$(this).children('.footer__window').css('visibility','visible')
 		$('.footer__mob__item').off()
 	} 
 	function closeWindow() {
@@ -80,11 +81,15 @@ $(document).ready(function(){
 		$('.footer__window').css('left','50%')
 		$('.footer__window').css('top','50%')
 		$('.footer__window').css('opacity','0')
+		$('.footer__window').css('visibility','hidden')
 		setTimeout(function () {
 			$('.footer__mob__item').on('click',openWindow)
 		},1000)
 	}
 	$('.footer__mob__item').on('click',openWindow)
 	$('.footer__window__close').on('click',closeWindow)
-	
+	// Отключение скролла
+	$(document).on('scroll',function (e) {
+		e.preventDefault()
+	})
 })
