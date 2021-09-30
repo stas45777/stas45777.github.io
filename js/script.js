@@ -55,4 +55,36 @@ $(document).ready(function(){
 		$('#bg_img').css('fill','#f65e56')
 		$('#bg_img').css('transition','transform .1s ease, fill 1s')
 	},3000)
+
+	// Всплывающее окошко для мобильного футера
+	let window_offset_y = 0
+	let window_offset_x = 0
+	function openWindow() {
+		window_offset_y = $(this).eq(0).offset()['top'] + 1
+		window_offset_x = $(this).eq(0).offset()['left'] + 1
+		console.log(window_offset_x)
+		console.log(window_offset_y)
+		//console.log('translate(-' + window_offset_x + 'px;' + window_offset_y + 'px)')
+		$(this).children('.footer__window').css('transform','translate(-' + window_offset_x + 'px,-' + window_offset_y + 'px)')
+		$(this).children('.footer__window').css('width','calc(100vw + 1px)')
+		$(this).children('.footer__window').css('height','calc(100vh + 1px)')
+		$(this).children('.footer__window').css('left','0')
+		$(this).children('.footer__window').css('top','0')
+		$(this).children('.footer__window').css('opacity','1')
+		$('.footer__mob__item').off()
+	} 
+	function closeWindow() {
+		$('.footer__window').css('transform','none')
+		$('.footer__window').css('width','0')
+		$('.footer__window').css('height','0')
+		$('.footer__window').css('left','50%')
+		$('.footer__window').css('top','50%')
+		$('.footer__window').css('opacity','0')
+		setTimeout(function () {
+			$('.footer__mob__item').on('click',openWindow)
+		},1000)
+	}
+	$('.footer__mob__item').on('click',openWindow)
+	$('.footer__window__close').on('click',closeWindow)
+	
 })
