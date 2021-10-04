@@ -454,7 +454,6 @@ header img {
 }
 @media (max-width: 1411px) {
   .main__cards__card {
-    padding-bottom: 30px;
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -551,18 +550,7 @@ header img {
 }
 @media (max-width: 1411px) {
   .main__cards__foot {
-    margin-left: 0;
-    margin-right: 0;
-    height: auto;
-    color: #585858;
-    font-size: 1.125rem;
-    font-weight: 700;
-    background: #f9e9ea;
-    padding: 10px 10px;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    border-radius: 10px;
+    font-size: 1.8rem;
   }
 }
 @media (max-width: 425px) {
