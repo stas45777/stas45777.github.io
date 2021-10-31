@@ -48,17 +48,19 @@ a {
 body {
   max-height: 100vh !important;
   height: 100vh !important;
-  overflow-y: hidden !important;
+  overflow: hidden !important;
+  max-width: 100%;
 }
 
 html {
   overflow: hidden !important;
   max-height: 100vh !important;
+  max-width: 100%;
 }
 
 .main {
   height: 200px;
-  overflow-y: hidden !important;
+  overflow: hidden !important;
 }
 
 @-webkit-keyframes logoScale {

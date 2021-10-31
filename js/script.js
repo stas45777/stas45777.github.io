@@ -89,7 +89,8 @@ $(document).ready(function(){
 	$('.footer__mob__item').on('click',openWindow)
 	$('.footer__window__close').on('click',closeWindow)
 	// Отключение скролла
-	$(document).on('scroll',function (e) {
+	$('html').on('scroll',function (e) {
 		e.preventDefault()
 	})
 })
+
