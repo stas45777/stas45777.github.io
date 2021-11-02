@@ -153,3 +153,59 @@ body{
 	top: 58px;
 	left: 65px;
 }
+
+
+
+// Главный блок
+
+.main{
+	overflow: hidden;
+	height: 1000px;
+}
+.user{
+	margin-top: 90px;
+	&__head{
+		display: flex;
+	}
+	&__photo{
+		background: #fff;
+		box-shadow: 6px 6px 18px rgba(0, 0, 0, 0.18);
+		border-radius: 15px;
+		width: 92px;
+		height: 92px;
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+	}
+	&__name{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-left: 45px;
+		&__name{
+			color: #585858;
+			font-family: Roboto;
+			font-size: 57px;
+			font-weight: 700;
+			line-height: 0.5;
+		}
+	}
+	&__achiev{
+		color: #585858;
+		font-family: Roboto;
+		font-size: 23px;
+		font-weight: 400;
+		display: flex;
+		align-items: center;
+		&__all{
+			color: #585858;
+			font-family: Roboto;
+			font-size: 12px;
+			font-weight: 400;
+			padding: 10px 20px;
+			border-radius: 15px;
+			background-color: #ffffff;
+			margin-left: 15px;
+		}
+	}
+}
