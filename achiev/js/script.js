@@ -2,9 +2,10 @@
 
 
 $(document).ready(function(){
+	//$(document).scrollTop('0')
 	let video = document.getElementById("video")
 	let play = $('#play')
-	let time_lapse_width = Math.ceil($('#time').width())
+	let time_lapse_width = Math.ceil($('#time').width()) - $('#time_button').outerWidth()
 	let current_time = 0
 	let progress_per = 0
 	let move_time_lapse = 0
@@ -71,5 +72,64 @@ $(document).ready(function(){
  	check_interval = setInterval(checkTimeLapse,500)
  })
 
+ // Работа со скроллом
 
+ let scroll_disabled = false
+ let scroll_top = 0
+
+
+ function listenScroll() {
+ 	if (scroll_top < $(document).scrollTop()) {
+ 		scroll_top = scroll_top + $(window).height()
+ 		conole.log(scroll_top)
+ 	}
+ }
+// $(document).on('wheel',function (e) {
+// 	if (e.originalEvent.wheelDelta >= 0) {
+//		console.log('Вверх');
+//		scrollDocumentTop()
+//	} else {
+//		console.log('Вниз');
+//		scrollDocumentBottom()
+//
+//	}
+//	e.originalEvent.wheelDelta = false
+// })
+ function scrollDocumentBottom() {
+ 	console.log(scroll_top)
+ 	$('body').css('bottom',scroll_top + $(window).height())
+ 	scroll_top = scroll_top + $(window).height()
+ }
+ function scrollDocumentTop() {
+ 	console.log(scroll_top)
+ 	if (scroll_top == 0) {
+ 		return false
+ 	}
+ 	$('body').css('bottom',scroll_top - $(window).height())
+ 	scroll_top = scroll_top - $(window).height()
+ }
+
+
+
+ $('.achiev__card').height($('.achiev__card').width())
+
+ // Установка одинакового отступа для achiev__card
+ let pos_1 = $('.achiev__card__wrap').eq(0).offset()['left']
+ let pos_2 = $('.achiev__card__wrap').eq(1).offset()['left']
+ let card_width = $('.achiev__card__wrap').eq(0).width()
+ let result_margin = pos_2 - pos_1 - card_width
+ $('.achiev__card__wrap').css('margin-bottom',Math.ceil(result_margin) + 'px')
+
+ // Показ всплывающего окна
+ function showWindow() {
+ 	$('.window').addClass('window_active')
+ 	$('body').css('overflow-y','hidden')
+ } 
+ function hideWindow() {
+ 	$('.window').removeClass('window_active')
+ 	$('body').css('overflow-y','scroll')
+ } 
+ $('.window__close').on('click',hideWindow)
+ $('.window__bg').on('click',hideWindow)
+ $('.show_window').on('click',showWindow)
 })
