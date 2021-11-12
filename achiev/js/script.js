@@ -12,9 +12,13 @@ $(document).ready(function(){
 	let start_video = false
 	let video_duration = false
 	video.volume = 0.1
-	video.addEventListener('canplaythrough',function () {
+	let video_can_play = setInterval(function () {
 		video_duration = video.duration
-	})
+		if ((video_duration != 0) && (video_duration != false)) {
+			clearInterval(video_can_play)
+		}
+	},500)
+
 	function playPause() {
 		if (video.paused) {
 			video.play()
@@ -26,7 +30,7 @@ $(document).ready(function(){
 	play.on('click',playPause)
 	function muteSwitcher () {
 		if (video.volume == 0) {
-			video.volume = 0.4
+			video.volume = 0.1
 		} else {
 			video.volume = 0
 		}
@@ -36,9 +40,9 @@ $(document).ready(function(){
 
 
 	function checkTimeLapse () {
-			current_time = video.currentTime
-			progress_per = (current_time / video_duration).toFixed(4)
-			$('#time_button').css('left',progress_per * time_lapse_width + 'px')
+		current_time = video.currentTime
+		progress_per = (current_time / video_duration).toFixed(4)
+		$('#time_button').css('left',progress_per * time_lapse_width + 'px')
 	}
 	let check_interval = setInterval(checkTimeLapse,500)
 
