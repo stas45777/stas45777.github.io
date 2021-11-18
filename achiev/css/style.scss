@@ -177,7 +177,7 @@ body{
 	&__head{
 		display: flex;
 		position: relative;
-		z-index: -1;
+		z-index: 2;
 	}
 	&__info{
 		display: flex;
@@ -199,6 +199,8 @@ body{
 		flex-direction: column;
 		justify-content: space-between;
 		margin-left: 45px;
+		padding-top: 8px;
+		margin-bottom: -5px;
 		&__name{
 			color: #585858;
 			font-family: Roboto;
@@ -239,7 +241,8 @@ body{
 		width: 450px;
 		height: 450px;
 		border-radius: 50%;
-		background: #ff5e5c;
+		background: linear-gradient(90deg, #D5645E 0%, #FF5D54 91.2%), #C4C4C4;
+		box-shadow: 0px -38px 64px 30px rgba(255, 93, 84,0.2), inset 0px -38px 64px 30px rgba(0, 0, 0, 0.2);
 		z-index: -1;
 		top: 400px;
 		transform: translateX(-55%);
@@ -305,6 +308,132 @@ body{
 		}
 	}
 }
+.user__card__achiev_mob{
+	display: none;
+}
+@media (max-width:650px) {
+	html, body{
+		overflow-x: hidden !important;
+	}
+	.user{
+		&__bg{
+			left: -20%;
+			top: 300px;
+			width: 350px;
+			height: 350px;
+			box-shadow: 0px -38px 64px 5px rgba(255, 93, 84, 0.15), inset 0px -38px 64px 30px rgba(0, 0, 0, 0.2);
+		}
+		&__info{
+			flex-direction: column;
+			align-items: flex-start;
+			overflow: visible;
+		}
+		&__achiev{
+			font-size: 12px;
+			display: flex;
+			flex-direction: column;
+			&__all{
+				margin-left: 0;
+				margin-top: 15px;
+			}
+		}
+		&__head{
+			flex-direction: column;
+			align-items: center;
+		}
+		&__photo{
+			margin-bottom: 25px;
+		}
+		&__name{
+			margin-left: 0;
+			&__name{
+				font-size: 18px;
+				margin-bottom: 10px;
+			}
+		}
+		&__cards{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: flex-end;
+			position: relative;
+			overflow: visible;
+		}
+		&__card{
+			height: 210px;
+			width: 230px;
+			padding: 25px;
+			border-radius: 10px;
+			position: relative;
+			margin-right: 15px;
+			&_active{
+				height: 240px;
+			}
+			&__title{
+				font-size: 12px;
+				padding: 9px;
+				margin-bottom: 10px;
+			}
+			&__text{
+				font-size: 9.5px;
+				margin-bottom: 12px;
+			}
+			&__more{
+				display: none;
+			}
+			&__achiev_mob{
+				display: flex;
+				font-size: 8.5px;
+				width: 100%;
+				justify-content: space-between;
+			}
+			&__achiev__item{
+				flex: 0 0 45%;
+				background: #fff;
+				border-radius: 7px;
+				padding: 8px 0;
+				color: #585858;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				& img{
+					width: 11px;
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+	.dn{
+		display: block;
+	}
+	.user__slider{
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		height: 11px;
+		border-radius: 6px;
+		background: rgba(255,255,255,0.8);
+		backdrop-filter: blur(25px);
+		width: 150px;
+		margin-top: 25px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 0 5px;
+		&__stage{
+			background: #f06961;
+			border-radius: 2.5px;
+			width: 15px;
+			height: 5px;
+		}
+	}
+}
+
+
+
+
+
+
 
 // Блок преимущества
 
@@ -316,7 +445,7 @@ body{
 		margin: 0 -47.5px;
 	}
 	&__card{
-		color: #808080;
+		color: #585858;
 		font-family: Roboto;
 		font-size: 28px;
 		font-weight: 400;
@@ -353,7 +482,7 @@ body{
 	&__add{
 		position: absolute;
 		bottom: 15%;
-		color: #808080;
+		color: #979797;
 		font-family: Roboto;
 		font-size: 14px;
 		font-weight: 400;
@@ -365,7 +494,8 @@ body{
 	}
 }
 .text_red{
-	color: #f46d65;
+	color: #FF5D54;
+	font-weight: 700;
 }
 
 // Обучение
@@ -410,33 +540,35 @@ body{
 	&__block{
 		display: flex;
 		justify-content: space-between;
+		align-items: stretch;
 	}
 	&__sub{
-		max-height: 100%;
 		flex: 0 0 27%;
-		background: rgba(255, 255, 255, 0.7);
+		background: rgba(255, 255, 255, 0.5);
 		box-sizing: border-box;
 		box-shadow: 5px 10px 39px rgba(0, 0, 0, 0.05);
 		backdrop-filter: blur(40px);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: 60px 50px 40px 65px;
+		padding: 25px 50px 40px 65px;
 		border: 2px solid #ececec;
 		border-radius: 25px;
+		font-weight: 500;
 		@media (max-width:992px) {
 			padding-left: 40px;
 			padding-right: 20px;
 		}
 		& .title{
-			margin-bottom: 65px;
+			margin-bottom: 35px;
 			@media (max-width:992px) {
 				position: relative;
 				right: 10px;
 			}
 		}
 		& .text div{
-			margin-bottom: 25px;
+			margin-bottom: 40px;
+			line-height: 22px;
 		}
 	}
 	&__main{
@@ -444,18 +576,23 @@ body{
 		&__head{
 			display: flex;
 			align-items: center;
-			justify-content: space-between;
+			justify-content: flex-start;
 			background: #f5dfde;
 			padding: 60px;
+			padding-bottom: 30px;
+			padding-top: 30px;
 			border-top-right-radius: 25px;
 			border-top-left-radius: 25px;
 			border-left: 2px solid #ececec;
 			border-right: 2px solid #ececec;
 			border-top: 2px solid #ececec;
-			background: rgba(255, 255, 255, 0.7);
+			background: rgba(255, 255, 255, 0.5);
 			box-sizing: border-box;
 			box-shadow: 5px 10px 39px rgba(0, 0, 0, 0.05);
-			backdrop-filter: blur(40px);
+			backdrop-filter: blur(60px);
+			& .title{
+				margin-right: 18px;
+			}
 		}
 		&__body{
 			display: flex;
@@ -468,10 +605,10 @@ body{
 			border-left: 2px solid #ececec;
 			border-right: 2px solid #ececec;
 			border-bottom: 2px solid #ececec;
-			background: rgba(255, 255, 255, 0.7);
+			background: rgba(255, 255, 255, 0.9);
 			box-sizing: border-box;
 			box-shadow: 5px 10px 39px rgba(0, 0, 0, 0.05);
-			backdrop-filter: blur(60px);
+			backdrop-filter: blur(40px);
 			@media (max-width:1410px) {
 				padding-bottom: 0px;
 			}

@@ -80,6 +80,7 @@ header img {
   -webkit-box-sizing: border-box !important;
           box-sizing: border-box !important;
   position: relative;
+  z-index: 30;
 }
 @media (max-width: 425px) {
   .button__icon {
@@ -110,11 +111,11 @@ header img {
   fill: #585858;
 }
 .button__icon svg {
-  margin-bottom: 22px;
+  margin-bottom: 25px;
 }
 @media (max-width: 1411px) {
   .button__icon svg {
-    margin-bottom: 19px;
+    margin-bottom: 15px;
     width: 18px;
   }
 }
@@ -159,17 +160,19 @@ header img {
           transform: skewX(-20deg) translate(-50%, -100%);
 }
 
+@-webkit-keyframes gradient {}
+
+@keyframes gradient {}
 .button__menu {
   -ms-flex-item-align: start;
       align-self: flex-start;
   width: 156px;
   max-height: 72px;
   min-height: 72px;
-  background: #fff;
   border-radius: 0 0 1.125rem 1.125rem;
   text-align: center;
   font-size: 1.125rem;
-  font-weight: 700;
+  font-weight: 400;
   color: #585858;
   cursor: pointer;
   -webkit-transition: all 0.8s;
@@ -185,13 +188,41 @@ header img {
   overflow: hidden;
   z-index: 10000;
   position: relative;
+  background: #fff;
+}
+.button__menu_regular {
+  font-weight: 400;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  opacity: 1;
+}
+.button__menu_bold {
+  font-weight: 700;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  opacity: 0;
+}
+.button__menu:after {
+  content: "";
+  position: absolute;
+  background: -webkit-gradient(linear, left top, right top, from(#D5645E), color-stop(91.2%, #FF5D54)), #FFFFFF;
+  background: linear-gradient(90deg, #D5645E 0%, #FF5D54 91.2%), #FFFFFF;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
 }
 .button__menu:hover {
-  background: #ff5d54;
   color: #fff;
   max-height: 500px;
+  font-weight: 700;
 }
 .button__menu:hover .button__menu__more {
+  opacity: 1;
+}
+.button__menu:hover:hover:after {
   opacity: 1;
 }
 .button__menu span {
@@ -212,8 +243,9 @@ header img {
   }
 }
 .button__menu_active {
-  background: #ff5d54;
   color: #ffffff;
+  background: #fff;
+  font-weight: 400;
 }
 @media (max-width: 425px) {
   .button__menu_active {
@@ -270,4 +302,28 @@ header img {
     min-height: 52px;
     font-size: 0.813rem;
   }
+}
+
+.button__menu.button__menu_active:after {
+  opacity: 1;
+}
+
+.button__menu_active_grad:after {
+  opacity: 0 !important;
+}
+
+.button__menu:hover .button__menu_regular {
+  opacity: 0 !important;
+}
+
+.button__menu:hover .button__menu_bold {
+  opacity: 1 !important;
+}
+
+.button__menu_active .button__menu_bold {
+  opacity: 1;
+}
+
+.button__menu_active .button__menu_regular {
+  opacity: 0;
 }

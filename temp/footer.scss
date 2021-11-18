@@ -18,11 +18,16 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		align-items: flex-start;
 		@media (max-width: 1411px) {
 			font-size: 0.688rem;
 		}
 	}
 	&__social{
+		color: #585858;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		& svg{
 			margin-top: 5px;
 			@media (max-width: 1411px) {
@@ -30,11 +35,17 @@
 			}
 		}
 	}
+	&__company{
+		color: #585858;
+	}
 	&__links{
 		flex: 1 1 auto;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		&__wrap{
+			margin-left: -6px;
+		}
 		&__nav{
 			display: flex;
 			flex-wrap: wrap;
@@ -89,3 +100,6 @@
 		font-weight: 300;
 	}
 }
+
+
+

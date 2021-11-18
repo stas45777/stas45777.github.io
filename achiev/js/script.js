@@ -39,9 +39,6 @@ $(document).ready(function(){
 		current_time = video.currentTime
 		progress_per = (current_time / video_duration).toFixed(4)
 		$('#time_button').css('left',progress_per * time_lapse_width + 'px')
-		console.log('current_time= ' + current_time)
-		console.log('video_duration= ' + video_duration)
-		console.log('progress_per= ' + progress_per)
 	}
 	let check_interval = setInterval(checkTimeLapse,500)
 
@@ -143,12 +140,37 @@ $(document).ready(function(){
 		if ($(this).hasClass('button__menu_active') == true) {
 			return false
 		}
-		$('.button__menu_active').css('background','#fff')
+		$('.button__menu_active').addClass('button__menu_active_grad')
 		$('.button__menu_active').css('color','#585858')
+		$('.button__menu_active .button__menu_regular').css('opacity','1')
+		$('.button__menu_active .button__menu_bold').css('opacity','0')
 	})
 	$('.button__menu').on('mouseleave',function () {
-		$('.button__menu_active').css('background','#ff5d54')
+		$('.button__menu_active').removeClass('button__menu_active_grad')
 		$('.button__menu_active').css('color','#fff')
+		$('.button__menu_active .button__menu_regular').css('opacity','0')
+		$('.button__menu_active .button__menu_bold').css('opacity','1')
 	})
+	// Настройка высоты карточки
+	
 
+
+	// Слайдер на мобилках
+	let active_card = 0
+	let cards_left = 0
+	function sliderNext () {
+		$('.user__cards').css('left','-' + ($('.user__card').outerWidth() + 15) + 'px')
+		cards_left = Number($('.user__cards').css('left').replace('px',''))
+		alert (cards_left)
+	}
+	sliderNext ()
+	let touch_start = false
+	$('.user__card').on('touchstart',function (e) {
+		touch_start = e
+	})
+	$('.user__card').on('touchmove',function (e) {
+		if ( (touch_start.touches[0].pageX - e.touches[0].pageX) >= 100 ) {
+			//console.log('Влево')
+		}
+	})
 })

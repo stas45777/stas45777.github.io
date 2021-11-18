@@ -49,6 +49,7 @@ header{
 	transition: all .3s;
 	cursor: pointer; box-sizing: border-box !important;
 	position: relative;
+	z-index: 30;
 	@media (max-width: 425px) {
 		display: none;
 	}
@@ -72,9 +73,9 @@ header{
 		fill: #585858;
 	}
 	& svg{
-		margin-bottom: 22px;
+		margin-bottom: 25px;
 		@media (max-width: 1411px){
-			margin-bottom: 19px;
+			margin-bottom: 15px;
 			width: 18px;
 		}
 	}
@@ -113,17 +114,18 @@ header{
 	left: 50%;
 	transform: skewX(-20deg) translate(-50%,-100%);
 }
-
+@keyframes gradient {
+	
+}
 .button__menu{
 	align-self: flex-start;
 	width: 156px;
 	max-height: 72px;
 	min-height: 72px;
-	background: #fff;
 	border-radius: 0 0 1.125rem 1.125rem;
 	text-align: center;
 	font-size: 1.125rem;
-	font-weight: 700;
+	font-weight: 400;
 	color: #585858;
 	cursor: pointer;
 	transition: all .8s;
@@ -133,13 +135,37 @@ header{
 	overflow: hidden;
 	z-index: 10000;
 	position: relative;
+	background: #fff;
+	&_regular{
+		font-weight: 400;
+		transition: all .6s;
+		opacity: 1;
+	}
+	&_bold{
+		font-weight: 700;
+		transition: all .6s;
+		opacity: 0;
+	}
+	&:after{
+		content: '';
+		position: absolute;
+		background: linear-gradient(90deg, #D5645E 0%, #FF5D54 91.2%), #FFFFFF;
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		transition: all .8s;
+	}
 	&:hover{
-		background: #ff5d54;
 		color: #fff;
 		max-height: 500px;
+		font-weight: 700;
 		& .button__menu__more{
 			opacity: 1;
 		}
+	&:hover:after{
+		opacity: 1;
+	}
 	}
 	& span{
 		position: absolute;
@@ -157,8 +183,9 @@ header{
 
 	}
 	&_active{
-		background: #ff5d54;
 		color: #ffffff;
+		background: #fff;
+		font-weight: 400;
 		@media (max-width: 425px) {
 			display: flex;
 			border-radius: 0px;
@@ -199,4 +226,22 @@ header{
 		min-height: 52px;
 		font-size: 0.813rem;
 	}
+}
+.button__menu.button__menu_active:after{
+	opacity: 1;
+}
+.button__menu_active_grad:after{
+	opacity: 0 !important;
+}
+.button__menu:hover .button__menu_regular{
+	opacity: 0 !important;
+}
+.button__menu:hover .button__menu_bold{
+	opacity: 1 !important;
+}
+.button__menu_active .button__menu_bold{
+	opacity: 1;
+}
+.button__menu_active .button__menu_regular{
+	opacity: 0;
 }
