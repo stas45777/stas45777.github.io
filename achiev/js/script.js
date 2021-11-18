@@ -161,7 +161,6 @@ $(document).ready(function(){
 	function sliderNext () {
 		$('.user__cards').css('left','-' + ($('.user__card').outerWidth() + 15) + 'px')
 		cards_left = Number($('.user__cards').css('left').replace('px',''))
-		alert (cards_left)
 	}
 	sliderNext ()
 	let touch_start = false
