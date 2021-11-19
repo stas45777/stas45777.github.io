@@ -111,14 +111,15 @@ $(document).ready(function(){
 
 
 
- $('.achiev__card').height($('.achiev__card').width())
-
  // Установка одинакового отступа для achiev__card
- let pos_1 = $('.achiev__card__wrap').eq(0).offset()['left']
- let pos_2 = $('.achiev__card__wrap').eq(1).offset()['left']
- let card_width = $('.achiev__card__wrap').eq(0).width()
- let result_margin = pos_2 - pos_1 - card_width
- $('.achiev__card__wrap').css('margin-bottom',Math.ceil(result_margin) + 'px')
+ $('.achiev__card').height($('.achiev__card').width())
+ if ($(window).width() > 650) {
+ 	let pos_1 = $('.achiev__card__wrap').eq(0).offset()['left']
+ 	let pos_2 = $('.achiev__card__wrap').eq(1).offset()['left']
+ 	let card_width = $('.achiev__card__wrap').eq(0).width()
+ 	let result_margin = pos_2 - pos_1 - card_width
+ 	$('.achiev__card__wrap').css('margin-bottom',Math.ceil(result_margin) + 'px')
+ }
 
  // Показ всплывающего окна
  function showWindow() {
@@ -158,18 +159,72 @@ $(document).ready(function(){
 	// Слайдер на мобилках
 	let active_card = 0
 	let cards_left = 0
+	let cards_len = $('.user__card').length - 1
+	let slider_stop = false
+	let slider_stage_width = $('.user__slider__stage').width()
+	let stage_step = ($('.user__slider').width() / cards_len) - (slider_stage_width/cards_len)
+	let slider_stage_left = 0
+	let slider_delay = 500
 	function sliderNext () {
-		$('.user__cards').css('left','-' + ($('.user__card').outerWidth() + 15) + 'px')
-		cards_left = Number($('.user__cards').css('left').replace('px',''))
+		if (active_card == cards_len) {
+			return false
+		}
+		$('.user__cards').css('left',cards_left - ($('.user__card').outerWidth() + 15) + 'px')
+		cards_left = cards_left - ($('.user__card').outerWidth() + 15)
+		$('.user__card').eq(active_card).removeClass('user__card_active')
+		active_card = active_card + 1
+		$('.user__card').eq(active_card).addClass('user__card_active')
+		// Переключение ползунка
+		$('.user__slider__stage').css('width',stage_step + slider_stage_width + 'px')
+		setTimeout(function () {
+			$('.user__slider__stage').css('left',slider_stage_left + stage_step + 'px')
+			slider_stage_left = slider_stage_left + stage_step
+		},slider_delay)
+		setTimeout(function () {
+			$('.user__slider__stage').css('width',slider_stage_width + 'px')
+		},slider_delay)
 	}
-	sliderNext ()
+	function sliderPrev () {
+		if (active_card == 0) {
+			return false
+		}
+		$('.user__cards').css('left',cards_left + ($('.user__card').outerWidth() + 15) + 'px')
+		cards_left = cards_left + ($('.user__card').outerWidth() + 15)
+		$('.user__card').eq(active_card).removeClass('user__card_active')
+		active_card = active_card - 1
+		$('.user__card').eq(active_card).addClass('user__card_active')
+		// Переключение ползунка
+		$('.user__slider__stage').css('left',slider_stage_left - stage_step + 'px')
+		$('.user__slider__stage').css('width',stage_step + slider_stage_width + 'px')
+		setTimeout(function () {
+			$('.user__slider__stage').css('width',slider_stage_width + 'px')
+			slider_stage_left = slider_stage_left - stage_step
+		},slider_delay)
+
+	}
 	let touch_start = false
 	$('.user__card').on('touchstart',function (e) {
 		touch_start = e
 	})
+	$('.user__card').on('touchend',function () {
+		setTimeout(function () {
+			slider_stop = false
+		},500)
+	})
 	$('.user__card').on('touchmove',function (e) {
-		if ( (touch_start.touches[0].pageX - e.touches[0].pageX) >= 100 ) {
-			//console.log('Влево')
+		if (slider_stop) {
+			return false
+		}
+		if ( (touch_start.touches[0].pageX - e.touches[0].pageX) >= 15 ) {
+			slider_stop = true
+			console.log('Влево')
+			sliderNext ()
+		}
+		if ( (e.touches[0].pageX - touch_start.touches[0].pageX ) >= 15 ) {
+			slider_stop = true
+			console.log('Вправо')
+			sliderPrev ()
 		}
 	})
+	
 })

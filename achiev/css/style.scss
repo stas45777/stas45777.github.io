@@ -163,6 +163,38 @@ body{
 	left: 65px;
 }
 
+@media (max-width:650px) {
+	#time{
+		width: 160px;
+		height: 8px;
+		margin-left: 0px;
+	}
+	#time_button{
+		height: 4px;
+		width: 4px;
+		border-width: 3px;
+		top: -1px;
+	}
+	#mute img,#play img{
+		width: 25px;
+	}
+	#mute,#play{
+		margin-right: 13px;
+	}
+	#video{
+		object-fit: contain;
+  	background-image: linear-gradient(215deg, rgb(213,100,94) 0%, rgb(255,93,84) 100%);
+  	box-shadow: inset 0 75px 35px  -20px rgba(0,0,0,0.5) , inset 0 -75px 35px  -20px rgba(0,0,0,0.5);
+	}
+	.controls{
+		bottom: 65px;
+	}
+	#watermark{
+		left: 50%;
+		transform: translateX(-50%);
+		top: 30px;
+	}
+}
 
 
 // Главный блок
@@ -340,6 +372,8 @@ body{
 		&__head{
 			flex-direction: column;
 			align-items: center;
+			width: 100%;
+			margin-top: 40px;
 		}
 		&__photo{
 			margin-bottom: 25px;
@@ -358,6 +392,11 @@ body{
 			align-items: flex-end;
 			position: relative;
 			overflow: visible;
+			transition: all .5s;
+			transform: translateX(0);
+			padding-left: 50%;
+			left: 0;
+			height: 240px;
 		}
 		&__card{
 			height: 210px;
@@ -366,8 +405,12 @@ body{
 			border-radius: 10px;
 			position: relative;
 			margin-right: 15px;
+			transition: all .5s;
+			transform: translateX(-50%);
+			opacity: 0.7;
 			&_active{
 				height: 240px;
+				opacity: 1;
 			}
 			&__title{
 				font-size: 12px;
@@ -420,12 +463,19 @@ body{
 		justify-content: flex-start;
 		align-items: center;
 		padding: 0 5px;
+		overflow-x: hidden;
 		&__stage{
 			background: #f06961;
 			border-radius: 2.5px;
 			width: 15px;
 			height: 5px;
+			position: relative;
+			left: 0;
+			transition: width 0.5s ease, left 0.5s ease;
 		}
+	}
+	.user.container{
+		margin: 0;
 	}
 }
 
@@ -497,6 +547,31 @@ body{
 	color: #FF5D54;
 	font-weight: 700;
 }
+
+@media (max-width:650px) {
+	.achiev{
+		&__block{
+			flex-direction: column;
+			align-items: center;
+		}
+		&__card{
+			font-size: 14px;
+			width: 200px;
+			&__wrap{
+				margin-bottom: 40px;
+			}
+		}
+		&__add{
+			font-size: 7px;
+			& img{
+				width: 6px;
+			}
+		}
+	}
+}
+
+
+
 
 // Обучение
 .title {
@@ -627,6 +702,70 @@ body{
 	}
 
 }
+@media (max-width:650px) {
+	.study{
+		padding-bottom: 100px;
+		height: auto;
+		& .container{
+			display: flex;
+			justify-content: center;
+		}
+		&__block{
+			flex-direction: column;
+			width: 75%;
+		}
+		&__main{
+			margin-bottom: 20px;
+			& .text{
+				text-align: center;
+			}
+			&__head{
+				padding: 25px 40px;
+				flex-direction: column;
+				align-items: center;
+				& .title{
+					margin-bottom: 13px;
+					margin-right: 0;
+				}
+			}
+			&__body{
+				padding: 35px 0;
+				padding-bottom: 7px;
+				justify-content: center;
+				& img{
+					margin: 0;
+					width: 50px;
+				}
+			}
+		}
+		&__img{
+			flex: 0 0 40%;
+			display: flex;
+			justify-content: center;
+			margin-bottom: 28px;
+		}
+		&__sub{
+			padding-left: 35px;
+			margin-top: -80px;
+			padding-bottom: 25px;
+			& .text div{
+				margin-bottom: 20px;
+				line-height: 10px;
+				padding-right: 50px;
+			}
+		}
+	}
+	.title{
+		font-size: 12px;
+		padding: 7px 15px;
+	}
+	.text{
+		font-size: 9px;
+	}
+}
+
+
+
 
 
 // Диалоговое окно
