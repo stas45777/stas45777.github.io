@@ -644,6 +644,9 @@ body{
 		& .text div{
 			margin-bottom: 40px;
 			line-height: 22px;
+			@media (max-width:850px) {
+				margin-bottom: 20px;
+			}
 		}
 	}
 	&__main{
@@ -691,11 +694,14 @@ body{
 				margin-bottom: 75px;
 				margin-right: 90px;
 				@media (max-width:1410px) {
-					width: 15%;
 					margin-bottom: 50px;
 				}
 				@media (max-width:992px) {
 					margin-right: 65px;
+				}
+				@media (max-width:810px) {
+					margin-right: 65px;
+					width: 40%;
 				}
 			}
 		}
@@ -746,7 +752,7 @@ body{
 		}
 		&__sub{
 			padding-left: 35px;
-			margin-top: -80px;
+			margin-top: -50px;
 			padding-bottom: 25px;
 			& .text div{
 				margin-bottom: 20px;
@@ -763,7 +769,11 @@ body{
 		font-size: 9px;
 	}
 }
-
+@media (max-width:350px) {
+	.study__sub{
+		margin-top: -60px;
+	}
+}
 
 
 
