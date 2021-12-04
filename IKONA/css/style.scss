@@ -1,5 +1,6 @@
 html {
 	font-size: 13px;
+	overflow-x: hidden !important;
 }
 
 body {
@@ -9,9 +10,12 @@ body {
 	overflow-x: hidden !important;
 	color: #E9E9E9;
 	background: #212121;
+	position: relative;
 
 }
-
+section{
+	overflow-x: hidden;
+}
 html {
 	overflow-x: hidden;
 }
@@ -52,7 +56,14 @@ a {
 		font-size: 7px;
 	}
 }
-
+@media (max-width: 420px) {
+	header{
+		display: none;
+	}
+	html{
+		font-size: 10px;
+	}
+}
 
 
 
@@ -287,6 +298,103 @@ input{
 			}
 		}
 	}
+	@media (max-width:420px) {
+		padding-top: 50px;
+		.main__container{
+			flex-direction: column;
+		}
+		.main__calc{
+			padding-top: 0px;
+		}
+		.text{
+			margin-bottom: 50px;
+		}
+		.main__info__img{
+			margin-top: 40px;
+			margin-bottom: 70px;
+		}
+		.main__info{
+			margin-top: 41px;
+		}
+		.main__calc__row{
+			display: none;
+		}
+		.main__calc__mob{
+			display: flex;
+			flex-direction: column;
+			& .btn{
+				display: flex;
+				justify-content: center;
+				margin-bottom: 20px;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				font-size: 1.9rem;
+			}
+			& .title{
+				position: relative;
+				top: -40px;
+			}
+		}
+		.main__calc__text{
+			display: none;
+		}
+		#file__label{
+			height: 130px;
+		}
+		.main__calc__foot__cost_name{
+			display: none;
+		}
+		.main__calc__foot__cost_rub{
+
+		}
+		.main__calc__more{
+			background: #EEEEEE;
+			border: 0.904762px solid #EEEEEE;
+			box-sizing: border-box;
+			border-radius: 9px;
+			position: absolute;
+			left: -3px;
+			right: -3px;
+			top: -5px;			
+			z-index: 10;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding-top: 35px;
+			padding-bottom: 5px;
+			max-height: 0;
+			opacity: 0;
+			transition: all .5s;
+			&_active {
+				max-height: 500px;
+				opacity: 1;
+			}
+			&__link{
+				color: #383838;
+				font-size: 1.4rem;
+				margin-bottom: 30px;
+				font-weight: bold;
+				&_title{
+					font-weight: normal;
+				}
+			}
+		}
+		.btn{
+			position: relative;
+		}
+	}
+	@media (max-width:324px) {
+		padding-top: 0px;
+		.btn_mob{
+			font-size: 1.9rem;
+		}
+		.text{
+			margin-bottom: 15px;
+		}
+		.main__info__img{
+			margin-top: 14px;
+		}
+	}
 }
 // Задний эффект стикеров
 #ananas{
@@ -444,6 +552,47 @@ input{
 		opacity: 0;
 		transition: all .5s;
 	}
+	@media (max-width:420px) {
+		.sticker__wrap{
+			flex: 0 0 50%;
+			padding-left: 0;
+			padding-right: 0;
+		}
+		& .sticker__block{
+			margin: 0 -90px;
+		}
+		& .text{
+			font-size: 1.5rem;
+		}
+		.sticker__block{
+			flex-wrap: nowrap;
+			transform: translateX(0);
+			transition: all .5s;
+		}
+		.sticker__card{
+			pointer-events: none;
+			& img{
+				width: 100px;
+			}
+		}
+		.sticker__slider{
+			background: #383838;
+			border-radius: 7.47727px;
+			height: 5px;
+			position: relative;
+			&__step{
+				width: 30px;
+				height: 100%;
+				background: #A1FF60;
+				border-radius: 7.47727px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				transform: translateX(0);
+				transition: all .5s;
+			}
+		}
+	}
 }
 
 .catalog{
@@ -585,6 +734,36 @@ input{
 			transition: all .5s;
 		}
 	}
+	@media (max-width:420px) {
+		& .title{
+			text-align: center;
+		}
+		& .catalog__btn{
+			top: 0px;
+			padding: 10px 40px;
+		}
+		& .catalog__items{
+			text-align: center;
+			margin: 0 -20px;
+		}
+		& .catalog__el__wrap{
+			flex: 0 0 50%;
+			padding: 0 10px;
+		}
+		& .catalog__el{
+			padding-top: 5px;
+			margin-bottom: 20px;
+			&__foot{
+				padding-bottom: 15px;
+				margin-top: 0;
+				padding-top: 13px;
+			}
+			&__popul{
+				top: 15px;
+				right: 15px;
+			}
+		}
+	}
 }
 
 .btn{
@@ -642,6 +821,18 @@ input{
 	&:hover{
 		background: #EC46D3;
 		color: #212121;
+	}
+}
+.btn_mob{
+	display: none;
+	@media (max-width:420px) {
+		display: flex;
+		font-size: 2.2rem;
+		color: #000000;
+		background: #A1FF60;
+		box-shadow: 0px 0px 92.3671px rgba(161, 255, 96, 0.2);
+		border-radius: 17.1539px;
+		padding: 20px; 
 	}
 }
 .catalog__btn{
@@ -726,6 +917,33 @@ input{
 		opacity: 0;
 		max-height: 0;
 	}
+	@media (max-width:420px) {
+		.deadline__block{
+
+		}
+		.deadline__el__wrap{
+			padding: 0 10px;
+			flex: 0 0 50%;
+		}
+		.deadline__block{
+			margin: 0 -25px;
+			justify-content: center;
+		}
+		.deadline__el{
+			padding-top: 45px;
+			padding-bottom: 45px;
+			padding-left: 20px;
+			padding-right: 20px;
+			margin-bottom: 25px;
+			height: 200px;
+		}
+		.deadline__el__img{
+			transform: scale(0.7);
+		}
+		.deadline__text_med{
+			margin-top: 18px;
+		}
+	}
 }
 .quest{
 	padding-bottom: 50px;
@@ -781,6 +999,12 @@ input{
 		max-height: 0;
 		line-height: 15px;
 	}
+	@media (max-width:420px) {
+		.quest__el__wrap{
+			flex: 0 0 100%;
+			padding: 0 10px;
+		}
+	}
 }
 .insta{
 	padding-bottom: 50px;
@@ -812,6 +1036,25 @@ input{
 			margin-bottom: 40px;
 		}
 	}
+	@media (max-width:420px) {
+		.insta__items{
+			width: 250%;
+			transform: translateX(0px);
+			margin-right: 0;
+		}
+	}
+	@media (max-width:390px) {
+		.insta__items{
+			width: 300%;
+
+		}
+	}
+}
+.line__break{
+	width: 100%;
+}
+.main__calc__mob{
+	display: none;
 }
 .footer{
 	background: #262626;
@@ -868,6 +1111,45 @@ input{
 			margin-left: 10px;
 		}
 	}
+	@media (max-width:420px) {
+		.footer__block{
+			flex-direction: column-reverse; 
+		}
+		.footer__foot{
+			flex-wrap: wrap;
+			position: relative;
+		}
+		.footer__info{
+			flex-wrap: wrap;
+			align-items: start;
+		}
+		.switch__lang{
+			order: 3;
+			margin-right: 0;
+		}
+		.btn_green{
+			margin-bottom: 15px;
+			order: 0;
+		}
+		#map{
+			order: 2;
+		}
+		.icon{
+			order: 1;
+		}
+		.footer__links{
+			display: none;
+		}
+		.footer__work{
+			text-align: left;
+			margin-top: 15px;
+		}
+		.footer__cards{
+			position: absolute;
+			right: 0;
+			bottom: -50px;
+		}
+	}
 }
 .switch__lang{
 	padding: 6px 5px;
@@ -915,4 +1197,50 @@ input{
 
 .margin{
 	height: 800px;
+}
+.desktop__static{
+	position: fixed;
+	right: 150px;
+	bottom: 50px;
+	cursor: pointer;
+	&_btn{
+		height: 70px;
+		width: 70px;
+		border-radius: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&__arrow{
+		background: #383838;
+		box-shadow: 0px 0px 60px rgba(145, 255, 96, 0.05);
+		opacity: 0;
+		transition: all .5s;
+		& path{
+			transition: all .5s;
+		}
+		&:hover{
+			background: #A1FF60;
+		}
+		&:hover .desktop__static__img path{
+			fill: #383838;
+		}
+	}
+	&__brend{
+		background: #A1FF60;
+		box-shadow: 0px 0px 60px rgba(145, 255, 96, 0.05);
+		border-radius: 20px;
+		margin-top: 35px;
+		color: #383838;
+		text-align: center;
+		font-weight: bold;
+		font-size: .9rem;
+		line-height: 13px;
+		transition: all .5s;
+	}
+}
+@media (max-width:420px) {
+	.desktop__static{
+		display: none;
+	}
 }
