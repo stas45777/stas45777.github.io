@@ -412,6 +412,7 @@ input {
     padding-top: 15px;
     padding-bottom: 15px;
     font-size: 1.9rem;
+    border-radius: 13px;
   }
   .main .main__calc__mob .title {
     position: relative;
