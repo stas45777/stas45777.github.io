@@ -1,6 +1,7 @@
 html {
 	font-size: 13px;
 	overflow-x: hidden !important;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -64,7 +65,11 @@ a {
 		font-size: 10px;
 	}
 }
-
+@media (max-width: 330px) {
+	.container {
+		margin: 0 15px;
+	}
+}
 
 
 .header{
@@ -300,6 +305,7 @@ input{
 	}
 	@media (max-width:420px) {
 		padding-top: 50px;
+		overflow-y: hidden;
 		.main__container{
 			flex-direction: column;
 		}
@@ -569,6 +575,8 @@ input{
 			flex-wrap: nowrap;
 			transform: translateX(0);
 			transition: all .5s;
+			margin-left: -60px;
+			margin-right: -60px;
 		}
 		.sticker__card{
 			pointer-events: none;
@@ -736,8 +744,15 @@ input{
 		}
 	}
 	@media (max-width:420px) {
+		overflow-y: hidden;
 		& .title{
 			text-align: center;
+		}
+		& .catalog__el__price{
+			padding: 3px 5px;
+		}
+		& .catalog__el__foot{
+			padding: 0 15px;
 		}
 		& .catalog__btn{
 			top: 0px;
@@ -754,6 +769,7 @@ input{
 		& .catalog__el{
 			padding-top: 5px;
 			margin-bottom: 20px;
+			pointer-events: none;
 			&__foot{
 				padding-bottom: 15px;
 				margin-top: 0;
@@ -763,6 +779,22 @@ input{
 				top: 15px;
 				right: 15px;
 			}
+		}
+	}
+	@media (max-width:330px) {
+		.catalog__el__wrap{
+			flex: 0 0 100%;
+			padding: 0;
+		}
+		.catalog__el{
+			height: 280px;
+		}
+		.catalog__el__foot{
+			margin-top: 20px;
+		}
+		.catalog__items{
+			margin-left: 0;
+			margin-right: 0;
 		}
 	}
 }
@@ -840,6 +872,18 @@ input{
 	left: 50%;
 	transform: translateX(-50%);
 	top: -40px;
+	@media (max-width:330px) {
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 21px;
+		border-radius: 10px;
+	}
 }
 .icon{
 	padding: 5px 8px;
@@ -943,6 +987,26 @@ input{
 		}
 		.deadline__text_med{
 			margin-top: 18px;
+		}
+	}
+	@media (max-width:330px) {
+		.deadline__el__wrap{
+			flex: 0 0 100%;
+		}
+		.deadline__block{
+			margin-right: 0;
+			margin-left: 0;
+		}
+		.deadline__el{
+			height: 300px;
+			padding-left: 50px;
+			padding-right: 50px;
+			pointer-events: none;
+		}
+		.deadline__text_med{
+			font-weight: 500;
+			font-size: 10px;
+			line-height: 15px;
 		}
 	}
 }
@@ -1144,11 +1208,15 @@ input{
 		.footer__work{
 			text-align: left;
 			margin-top: 15px;
+			font-size: 8px;
 		}
 		.footer__cards{
 			position: absolute;
-			right: 0;
+			right: -10px;
 			bottom: -50px;
+			& img{
+				margin-left: 8px;
+			}
 		}
 	}
 }
@@ -1244,4 +1312,84 @@ input{
 	.desktop__static{
 		display: none;
 	}
+}
+@media (max-width:420px) {
+	.mob__menu{
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: #262626;
+		z-index: 1000;
+		&__container{
+			z-index: 1000;
+			position: relative;
+		}
+		&__block{
+			display: flex;
+			align-items: center;
+			height: 65px;
+			justify-content: space-between;
+		}
+		&__switcher{
+			font-weight: bold;
+			font-size: 1.3rem;
+			line-height: 15px;
+			color: #383838;
+			background: #A1FF60;
+			border-radius: 6.46875px;
+			padding: 10px 12px;
+		}
+		&__el{
+			cursor: pointer;
+		}
+		&__main{
+			width: 100%;
+			background: #1C1C1C;
+			position: relative;
+			top: 100vh;
+			opacity: 0;
+			transition: all .5s;
+			max-height: 0;
+			z-index: 100;
+			&_active{
+				min-height: calc(100vh - 63px);
+				opacity: 1;
+				top: 0;
+				max-height: 101vh;
+			}
+			&__block{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding-top: 22vh;
+				position: relative;
+				& .mob__link{
+					margin-bottom: 25px;
+				}
+				& .btn_green{
+					width: 260px;
+					margin-bottom: 15px;
+					font-size: 19.665px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					& svg{
+						position: relative;
+						bottom: -2px;
+						margin-right: 14px;
+					}
+				}
+				& .mob__link_last{
+					margin-bottom: 100px;
+				}
+			}
+		}
+	}
+	.mob__link{
+		font-size: 23.2875px;
+		text-align: center;
+		color: #EEEEEE;
+	}
+
 }

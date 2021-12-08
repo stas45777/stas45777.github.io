@@ -97,4 +97,14 @@ $(document).ready(function() {
 			$('.desktop__static__arrow').css('opacity','0')
 		}
 	})
+	$('.desktop__static__arrow').on('click',function () {
+		$(document).scrollTop(0)
+	})
+	$('#menu__main').on('click',function () {
+		if ($('.mob__menu__main').hasClass('mob__menu__main_active')) {
+			$('.mob__menu__main').removeClass('mob__menu__main_active')
+		} else {
+			$('.mob__menu__main').addClass('mob__menu__main_active')
+		}
+	})
 })
