@@ -1,0 +1,47 @@
+body{
+	min-height: 100vh;
+}
+
+.footer__sticker{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.delivery{
+	padding-top: 60px;
+	& .title{
+		text-align: left;
+	}
+	&__cards{
+		margin: 0 -25px;
+		display: flex;
+		margin-top: 30px;
+		flex-wrap: wrap;
+		grid-row-gap: 25px;
+	}
+	&__el__wrap{
+		flex: 0 0 50%;
+		padding: 0 12.5px;
+		&_big{
+			flex: 0 0 100%;
+			min-height: 31rem;
+			& .text_med{
+				margin-bottom: 1.6rem;
+			}
+			& .text{
+				margin-bottom: 1.8rem;
+			}
+		}
+	}
+	@media (max-width:435px) {
+		.delivery__el__wrap{
+			flex: 0 0 100%;
+		}
+		& .title{
+			text-align: center;
+		}
+		padding-top: 50px;
+	}
+}

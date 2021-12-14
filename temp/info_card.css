@@ -1,0 +1,99 @@
+.info__card {
+  min-height: 20rem;
+  height: 100%;
+  background: linear-gradient(140.74deg, #323232 -30.46%, #212121 100.55%);
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3rem 3rem;
+}
+.info__card__svg {
+  cursor: pointer;
+}
+.info__card__bar {
+  font-weight: 500;
+  font-size: 1.3rem;
+  background: #383838;
+  border-radius: 8.88889px;
+  padding: 0.5rem 1.5rem;
+  color: #eee;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+.info__card__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.info__card__row_center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.info__card__row_sb {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.info__card_left {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.info__card_left .text__med {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+.info__card_small {
+  min-height: 0;
+  height: auto;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 45%;
+          flex: 0 0 45%;
+}
+.info__card__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-column-gap: 10px;
+  margin-bottom: 2.3rem;
+  margin-top: 1.45rem;
+}
+.info__card__img:last-child {
+  margin-bottom: 0 !important;
+}
+.info__card .text_med {
+  margin-bottom: 0.7rem;
+  text-align: center;
+  font-weight: 500;
+  width: 100%;
+}
+.info__card .text {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  line-height: 1.3rem;
+  font-weight: 300;
+}
+.info__card .text:last-child {
+  margin-bottom: 0;
+}

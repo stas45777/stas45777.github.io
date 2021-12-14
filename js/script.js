@@ -1,96 +1,69 @@
-
-
-
-$(document).ready(function(){
-	// Наведение на пункт меню
-	setTimeout(() => {
-		$('*').css('pointer-events','auto')
-	},2500)
-	$('.nav__button').hover(function () {
-		$('#logo').addClass('logo_animGray')
-		$('#name').addClass('logo_animGray')
-	},function () {
-		$('#logo').removeClass('logo_animGray')
-		$('#name').removeClass('logo_animGray')
+$(document).ready(function() {
+	$('.quest__el').on('click',function () {
+		if ($(this).hasClass('quest__el_active')) {
+			$('.quest__el').removeClass('quest__el_active')
+		}
+		else{
+			$('.quest__el').removeClass('quest__el_active')
+			$(this).addClass('quest__el_active')
+		}
 	})
-	$('#user').mouseenter(function () {
-		$('#authorization__window').addClass('authorization__window_active')
-		$('#user').css('border-bottom-left-radius','0px')
-		$('#user').css('border-bottom-right-radius','0px')
+	$(document).on('click',function (e){
+		if (($(e.target).hasClass('quest__el')) || ($(e.target).hasClass('quest__text_med'))) {
+			return false
+		} else {
+			$('.quest__el').removeClass('quest__el_active')
+		}
 	})
-	$('#authorization__window').mouseleave(function () {
-		$('#authorization__window').removeClass('authorization__window_active')
-		$('#user').css('border-bottom-left-radius','10px')
-		$('#user').css('border-bottom-right-radius','10px')
-	})
-	$('#phone').mouseenter(function () {
-		$('#authorization__window').removeClass('authorization__window_active')
-		$('#user').css('border-bottom-left-radius','10px')
-		$('#user').css('border-bottom-right-radius','10px')
-	})
-	$('.icons').mouseleave(function () {
-		$('#authorization__window').removeClass('authorization__window_active')
-		$('#user').css('border-bottom-left-radius','10px')
-		$('#user').css('border-bottom-right-radius','10px')
-	})
-
-	// Затемнение цветка при наведение на нижние пункты меню
-	$('.nav__button').hover(function () {
-		$('#bg_img').css('fill','#e7e7e7')
-	},function () {
-		$('#bg_img').css('fill','#f65e56')
-	})
-
-
-	// Паралакс для цветка
-	let paralaxMultiple = 5;
-	let window_width = $(document).width()
-	let rotate = 0
-	setTimeout(() => {
-		$('html').on('mousemove',function (e) {
-			rotate = (e.clientX - window_width / 2) * 2 / window_width * paralaxMultiple
-			$('#bg_img').css('transform', 'rotate(' + rotate + 'deg)')
+	
+	// Слайдер инстаграмма
+	function instaMove() {
+		let event_insta
+		let insta_transform = 0
+		let insta_transform_help = 0
+		$('.insta__items').on('touchstart',function (e) {
+			event_insta = e
 		})
-		$('#bg_img').css('animation','none')
-		$('#bg_img').css('fill','#f65e56')
-		$('#bg_img').css('transition','transform .1s ease, fill 1s')
-	},3000)
-
-	// Всплывающее окошко для мобильного футера
-	let window_offset_y = 0
-	let window_offset_x = 0
-	function openWindow() {
-		window_offset_y = $(this).eq(0).offset()['top'] + 1
-		window_offset_x = $(this).eq(0).offset()['left'] + 1
-		console.log(window_offset_x)
-		console.log(window_offset_y)
-		//console.log('translate(-' + window_offset_x + 'px;' + window_offset_y + 'px)')
-		$(this).children('.footer__window').css('transform','translate(-' + window_offset_x + 'px,-' + window_offset_y + 'px)')
-		$(this).children('.footer__window').css('width','calc(100vw + 1px)')
-		$(this).children('.footer__window').css('height','calc(100vh + 1px)')
-		$(this).children('.footer__window').css('left','0')
-		$(this).children('.footer__window').css('top','0')
-		$(this).children('.footer__window').css('opacity','1')
-		$(this).children('.footer__window').css('visibility','visible')
-		$('.footer__mob__item').off()
-	} 
-	function closeWindow() {
-		$('.footer__window').css('transform','none')
-		$('.footer__window').css('width','0')
-		$('.footer__window').css('height','0')
-		$('.footer__window').css('left','50%')
-		$('.footer__window').css('top','50%')
-		$('.footer__window').css('opacity','0')
-		$('.footer__window').css('visibility','hidden')
-		setTimeout(function () {
-			$('.footer__mob__item').on('click',openWindow)
-		},1000)
+		$('.insta__items').on('touchend',function (e) {
+			insta_transform = insta_transform_help
+		})
+		$('.insta__items').on('touchmove',function (e) {
+			$('.insta__items').css('transform','translateX('+ (insta_transform + ((event_insta.touches[0].pageX - e.touches[0].pageX) * -1)) + 'px)')
+			insta_transform_help = (insta_transform + ((event_insta.touches[0].pageX - e.touches[0].pageX) * -1))
+			if (insta_transform_help > 0){
+				$('.insta__items').css('transform','translateX(0px)')
+			}
+			if (((insta_transform_help * -1) + $(window).width()) > $('.insta__items').width()){
+				$('.insta__items').css('transform','translateX(' + (($('.insta__items').width() - $(window).width()) * -1) + 'px)')
+			}
+		})
 	}
-	$('.footer__mob__item').on('click',openWindow)
-	$('.footer__window__close').on('click',closeWindow)
-	// Отключение скролла
-	$('html').on('scroll',function (e) {
-		e.preventDefault()
+	instaMove()
+	// Калькулятор на мобилках
+	function openCalc() {
+		$('.open__more').on('click',function () {
+			$(this).children('.main__calc__more').addClass('main__calc__more_active')
+			setTimeout(function () {
+				$('.open__more').off()
+				$('body').on('click',function () {
+					$('.main__calc__more').removeClass('main__calc__more_active')
+					$('body').off()
+	
+					setTimeout(openCalc,500)
+				})
+			},500)
+		})
+	}
+	openCalc()
+	// Появление кнопок управления справа
+	$(document).on('scroll',function (e) {
+		if ($(document).scrollTop() >= $(window).height()) {
+			$('.desktop__static__arrow').css('opacity','1')
+		} else {
+			$('.desktop__static__arrow').css('opacity','0')
+		}
+	})
+	$('.desktop__static__arrow').on('click',function () {
+		$(document).scrollTop(0)
 	})
 })
-

@@ -1,0 +1,116 @@
+.catalog__eff {
+  position: relative;
+}
+.catalog__eff:hover .catalog__el__eff {
+  -webkit-transform: translateX(-50%) scale(3);
+          transform: translateX(-50%) scale(3);
+}
+.catalog__el {
+  border: 1px solid #A1FF60;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  overflow: hidden;
+  padding-top: 40px;
+  position: relative;
+}
+.catalog__el:hover .catalog__el__white {
+  opacity: 1;
+  top: 0;
+}
+.catalog__el:hover .catalog__el__img {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+}
+.catalog__el:hover .text {
+  color: #000;
+}
+.catalog__el:hover .text__med {
+  color: #000;
+}
+.catalog__el:hover .catalog__el__buy {
+  background: #383838;
+}
+.catalog__el:hover .catalog__el__buy path {
+  fill: #fff;
+}
+.catalog__el .text {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.catalog__el .text__med {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.catalog__el__popul {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  background: #EC46D3;
+  border-radius: 3px;
+  padding: 3px 8px;
+}
+.catalog__el__white {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background: #fff;
+  top: 100%;
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.catalog__el__img {
+  position: relative;
+  z-index: 2;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.catalog__el__foot {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 3.2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.catalog__el__eff {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%) scale(1.2);
+          transform: translateX(-50%) scale(1.2);
+  bottom: 10%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
