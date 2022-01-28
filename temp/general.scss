@@ -1,26 +1,14 @@
-// Основные стили
 html {
-	font-size: 13px;
-	overflow-x: hidden !important;
-	scroll-behavior: smooth;
+	font-size: 16px;
 }
 
 body {
 	margin: 0;
 	padding: 0;
-	font-family: Roboto;
-	overflow-x: hidden !important;
-	color: #E9E9E9;
-	background: #212121;
-	position: relative;
+	font-family: "Montserrat", monospace;
+	overflow-x: hidden;
+}
 
-}
-section{
-	overflow-x: hidden;
-}
-html {
-	overflow-x: hidden;
-}
 
 * {
 	box-sizing: border-box;
@@ -32,16 +20,13 @@ a {
 }
 
 .container {
-	max-width: 925px;
+	max-width: 1366px;
 	margin: 0 auto;
 }
 
-@media (max-width: 1170px) {
+@media (max-width: 1411px) {
 	.container {
-		max-width: 992px;
-	}
-	html{
-		font-size: 11px;
+		max-width: 1000px;
 	}
 }
 @media (max-width: 992px) {
@@ -49,307 +34,70 @@ a {
 		max-width: none;
 		margin: 0 30px;
 	}
-	html{
-		font-size: 9px;
-	}
 }
-@media (max-width: 768px) {
-	html{
-		font-size: 7px;
-	}
+body{
+	background: #F9FAFE;
+	color: #272727;
+	font-family: Roboto;
 }
-@media (max-width: 420px) {
-	header{
-		display: none;
+
+.btn{
+	padding: 10px 15px;
+	font-size: 0.875rem;
+	border-radius: 5px;
+	&_blue{
+		background: #DBEFFC;
 	}
-	html{
-		font-size: 10px;
+	&_black{
+		background: #272727;
 	}
-	.container {
-		max-width: none;
-		margin: 0 15px;
-	}
-}
-@media (max-width: 330px) {
-	.container {
-		margin: 0 15px;
+	&_small{
+		width: 36px;
+		height: 36px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 5px;
 	}
 }
 
-
-
-input{
-	outline: none !important;
-}
-
-
-
-
-// Стили для текста
-.title{
-	font-weight: 500;
-	font-size: 2rem;
-	line-height: 23px;
-	color: #EBEBEB;
-	text-align: center;
-	margin-bottom: 9px;
-}
-.text{
-	font-size: 0.8rem;
-	line-height: 9px;
-	color: #EBEBEB;
-	text-align: center;
-	&_left{
-		text-align: left;
-	}
-}
 .text_med{
-	font-size: 1rem;
-	line-height: 1.15rem;
-	color: #EBEBEB;
-	text-align: center;
+	font-size: 1.125rem;
+}
+.text_bold{
+	font-weight: bold;
+}
+.text_grey{
+	color: #949494;
 }
 .text_big{
-	font-size: 1.1rem;
-	line-height: 9px;
-	color: #EBEBEB;
-	text-align: center;
+	font-size: 1.875rem;
 }
-.text_li{
-	position: relative;  
-	margin-left: 14px;
-	&:before{
-		content: '';
-		position: absolute;
-		left: -14px;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 8px;
-		height: 1.4px;
-		background: #A1FF60;
-		border-radius: 3px;
-	}
-}
-.text_500{
-	font-weight: 500;
-}
-.text_left{
-	text-align: left;
-}
-// Всё для форм
-.input{
-	border: 1.33333px solid #A1FF60;
-	box-sizing: border-box;
-	border-radius: 0.5rem;
-	background: linear-gradient(140.74deg, #323232 -30.46%, #212121 100.55%);
-	font-weight: 300;
-	font-size: 0.6rem;
-	color: #8B8B8B;
-	padding: 0.6rem 0.75rem;
-	&_big{
-		border: none;
-		background: #383838;
-		min-height: 5.4rem;
-		display: flex;
-		align-items: flex-start;
-		font-weight: 300;
-		font-size: 0.7rem;
-		color: #8B8B8B;
-		font-family: Roboto;
-		resize: none;
-		&:focus{
-			outline: none;
-		}
-	}
-}
-.submit{
-	outline: none;
-	border: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-
-}
-// Для калькулятора
-.row__name{
-	position: relative;
-	&:after{
-		content: "Материалы наклейки";
-		position: absolute;
-		top: -25px;
-		font-size: 1rem;
-		font-weight: 500;
-	}
-}
-.row__size{
-	position: relative;
-	&:after{
-		content: "Размер (см)";
-		position: absolute;
-		top: -25px;
-		font-size: 1rem;
-		font-weight: 500;
-	}
-}
-.row__count{
-	position: relative;
-	&:after{
-		content: "Тираж (шт)";
-		position: absolute;
-		top: -25px;
-		font-size: 1rem;
-		font-weight: 500;
-	}
-}
-#file__label{
-	margin-top: 15px;
-	background: #474747;
-	width: 100%;
-	display: block;
-	height: 70px;
+.buy{
+	background: linear-gradient(101.82deg, #FFEFB7 -169.03%, #DBEFFC -48.23%, #FFB691 16.05%, #C6BBEC 86.59%);
 	border-radius: 10px;
-	padding: 13px 15px;
-	color: #7D7D7D;
-}
-
-
-// Кнопки
-.btn{
-	font-size: 1rem;
-	padding: 6px 9px;
-	border: 1px solid #A1FF60;
-	box-sizing: border-box;
-	border-radius: 5px;
-	display: inline-flex;
-	position: relative;
-	cursor: pointer;
-	transition: all .3s;
-	&:hover{
-		background: #A1FF60;
-		color: #212121;
-	}
-}
-.btn_green{
-	font-size: 1rem;
-	padding: 6px 9px;
-	color: #A1FF60;
-	background: #383838;
-	box-sizing: border-box;
-	border-radius: 5px;
-	display: inline-flex;
-	position: relative;
-	cursor: pointer;
-	transition: all .3s;
-	&:hover{
-		background: #fff;
-		color: #212121;
-	}
-	&:hover path{
-		fill: #212121;
-	}
-	& path{
-		transition: all .3s;
-	}
-	& .btn__img{
-		margin-right: 5px;
-	}
-}
-.btn_purple{
-	font-size: 1rem;
-	padding: 6px 9px;
-	font-weight: bold;
-	color: #EC46D3;
-	box-sizing: border-box;
-	border-radius: 5px;
-	display: inline-flex;
-	position: relative;
-	cursor: pointer;
-	transition: all .3s;
-	background: #383838;
-	&:hover{
-		background: #EC46D3;
-		color: #212121;
-	}
-}
-.btn_fullgreen{
-	font-size: 1rem;
-	padding: 6px 9px;
-	font-weight: bold;
-	color: #383838;
-	box-sizing: border-box;
-	border-radius: 5px;
-	display: inline-flex;
-	position: relative;
-	cursor: pointer;
-	transition: all .3s;
-	background: #A1FF60;
-	&:hover{
-		color: #383838;
-		background: #EEEEEE;
-	}
-}
-.btn_mob{
-	display: none;
-	@media (max-width:420px) {
-		display: flex;
-		font-size: 2.2rem;
-		color: #000000;
-		background: #A1FF60;
-		box-shadow: 0px 0px 92.3671px rgba(161, 255, 96, 0.2);
-		border-radius: 17.1539px;
-		padding: 20px; 
-	}
-}
-.link{
-	font-size: 0.9rem;
-	line-height: 9px;
-	color: #EEEEEE;
-	transition: all .3s;
-	&:hover{
-		color: #A1FF60;
-	}
-}
-
-.icon{
-	height: 25px;
-	width: 25px;
-	background: #383838;
-	border-radius: 5px;
-	transition: all .3s;
+	color: #F9FAFE;
+	font-size: 1.875rem;
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	& path{
-		transition: all .3s;
-	}
-	&:hover{
-		background: #fff;
-	}
-	&:hover path{
-		fill: #212121;
-	}
-	& svg{
-		margin-top: 3px;
-	}
+	justify-content: center;
+	min-height: 4.375rem;
+	cursor: pointer;
+	font-weight: 800;
 }
-.icon_green{
-	height: 25px;
-	width: 25px;
-	background: #A1FF60;
-	border-radius: 5px;
-	transition: all .3s;
+.buy_white{
+	border-radius: 10px;
+	font-size: 1.875rem;
+	background: #F9FAFE;
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	& path{
-		transition: all .3s;
-	}
-	&:hover{
-		background: #EC46D3;
-	}
-	&:hover path{
-		fill: #EEEEEE;
-	}
-	& svg{
-		margin-top: 3px;
+	justify-content: center;
+	min-height: 4.375rem;
+	cursor: pointer;
+	font-weight: 800;
+	& span{
+		color: transparent;
+		background: linear-gradient(101.82deg, #FFEFB7 -169.03%, #DBEFFC -48.23%, #FFB691 16.05%, #C6BBEC 86.59%);
+		background-clip: text;
 	}
 }
