@@ -1,0 +1,108 @@
+.footer {
+  background: #272727;
+  color: #fff;
+}
+.footer__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 40px 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.footer__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 20px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.footer__links .btn {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  text-align: center;
+}
+.footer__contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  grid-gap: 10px;
+}
+.footer .lang__switcher {
+  margin-top: 4px;
+}
+
+.lang_active {
+  background: linear-gradient(101.82deg, #FFEFB7 -169.03%, #DBEFFC -48.23%, #FFB691 16.05%, #C6BBEC 86.59%);
+  border-radius: 5px;
+  min-width: 8rem;
+  height: 2.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+.lang_noactive {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-top: 2px solid #F9FAFE;
+  border-right: 2px solid #F9FAFE;
+  border-bottom: 2px solid #F9FAFE;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-transform: translateX(-4px);
+          transform: translateX(-4px);
+  min-width: 6.5rem;
+  position: relative;
+  cursor: pointer;
+}
+.lang__switcher {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer__copy {
+  background: #1F1F1F;
+}
+.footer__copy__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 3.4rem;
+  color: #F9FAFE;
+}
+
+@media (max-width: 435px) {
+  .lang_active {
+    height: 20px;
+  }
+}

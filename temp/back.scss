@@ -1,0 +1,23 @@
+.back{
+	display: flex;
+	background: rgba(255,255,255,0);
+	transition: all .3s;
+	opacity: 0.4;
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 200px;
+	justify-content: center;
+	padding-top: 7.5rem;
+	cursor: pointer;
+	transform: translateX(-100%);
+	&__text{
+		margin-left: 0.6rem;
+		color: #000;
+	}
+	&:hover{
+		opacity: 1;
+		background: rgba(255,255,255,0.4);
+	}
+}

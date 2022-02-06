@@ -45,3 +45,21 @@
      -moz-column-gap: 15px;
           column-gap: 15px;
 }
+@media (max-width: 1280px) {
+  .header {
+    height: 50px;
+    padding: 9px 0;
+  }
+  .header .header__logo {
+    position: relative;
+    top: -5px;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+}
+
+@media (max-width: 435px) {
+  .header {
+    display: none;
+  }
+}

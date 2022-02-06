@@ -24,4 +24,18 @@
 		top: -5px;
 		column-gap: 15px;
 	}
+	@media (max-width:1280px) {
+		height: 50px;
+		padding: 9px 0;
+		& .header__logo{
+			position: relative;
+			top: -5px;
+			transform: scale(0.8);
+		}
+	}
+}
+@media (max-width:435px) {
+	.header{
+		display: none;
+	}
 }
