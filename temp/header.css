@@ -1,6 +1,9 @@
 .header {
   padding: 18px 0;
   height: 70px;
+  position: relative;
+  z-index: 2;
+  background: #F9FAFE;
 }
 .header__block {
   display: -webkit-box;

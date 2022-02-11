@@ -139,6 +139,9 @@ body {
   background: #ffffff;
   border: 1px solid #949494;
 }
+.mark_white:after {
+  background: url("/img/mark_black.png") !important;
+}
 .mark:after {
   content: "";
   opacity: 0;
@@ -161,6 +164,10 @@ body {
   font-size: 0.875rem;
 }
 
+.text_small {
+  font-size: 0.75rem;
+}
+
 .text_med {
   font-size: 1.125rem;
 }
@@ -170,6 +177,18 @@ body {
 }
 
 .text_grey {
+  color: #949494;
+}
+
+.text_27 {
+  color: #272727;
+}
+
+.text_black {
+  color: #000;
+}
+
+.text_old {
   color: #949494;
 }
 
@@ -218,6 +237,18 @@ body {
   background: linear-gradient(101.82deg, #FFEFB7 -169.03%, #DBEFFC -48.23%, #FFB691 16.05%, #C6BBEC 86.59%);
   -webkit-background-clip: text;
           background-clip: text;
+}
+
+.cost_old {
+  font-size: 1.125rem;
+  color: #949494;
+  text-decoration: line-through;
+}
+
+.cost_new {
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #272727;
 }
 
 @media (max-width: 1440px) {

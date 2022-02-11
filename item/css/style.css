@@ -118,6 +118,7 @@
   height: 100%;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  position: relative;
 }
 .product__galery__item {
   -webkit-box-flex: 0;
@@ -236,7 +237,8 @@
   margin-top: 0.6rem;
 }
 .product__cost_active {
-  background: #FFD8C4 !important;
+  background: #272727 !important;
+  color: #F9FAFE;
 }
 .product__size {
   margin-top: 1.6rem;

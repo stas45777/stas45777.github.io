@@ -55,106 +55,116 @@
 			</div>
 		</div>
 	</div>
-</header> <div class="main">
+</header><link rel="stylesheet" href="/temp/back.css">
+<a href="#" class="back">
+	<div class="back__img"><svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.59272 0.290325L6.53033 0.21967C6.25997 -0.0506931 5.83454 -0.0714902 5.54033 0.157278L5.46967 0.21967L0.21967 5.46967L0.188622 5.50264L0.147251 5.55352L0.0935034 5.63695L0.0534191 5.7215L0.0268839 5.80051L0.00518037 5.91143L0 6L0.0020909 6.05643L0.0151801 6.15054L0.0373036 6.23411L0.070255 6.31742L0.109497 6.39053L0.164767 6.46909L0.21967 6.53033L5.46967 11.7803C5.76256 12.0732 6.23744 12.0732 6.53033 11.7803C6.80069 11.51 6.82149 11.0845 6.59272 10.7903L6.53033 10.7197L2.562 6.75H14.25C14.6642 6.75 15 6.41421 15 6C15 5.58579 14.6642 5.25 14.25 5.25H2.5605L6.53033 1.28033C6.80069 1.00997 6.82149 0.584544 6.59272 0.290325L6.53033 0.21967L6.59272 0.290325Z" fill="#000"/>
+</svg>
+</div>
+<div class="back__text">Назад</div>
+</a>
+<script src="/temp/back.js"></script> 
+
+ <section class="order">
    <div class="container">
-     <div class="main__block">
-       <div class="main__title">SALE</div>
-       <div class="main__bottom">
-         <div class="main__sale"><span>15% OFF</span></div>
-         <div class="main__new">NEW YEAR <br> IS COMING!</div>
+     <div class="order__block">
+       <div class="order__select">
+         <div class="order__input__wrap">
+          <div class="order__buy__label order__buy__label__required">Имя</div>
+          <input name="name" type="text" placeholder="Введите имя..." class="order__input">
+        </div>
+         <div class="order__input__wrap">
+          <div class="order__buy__label order__buy__label__required">Фамилия</div>
+          <input name="surname" type="text" placeholder="Введите фамилию..." class="order__input">
+        </div>
+         <div class="order__input__wrap">
+          <div class="order__buy__label order__buy__label__required">Адрес электронной почты</div>
+          <input name="mail" type="text" placeholder="Введите вашу почту..." class="order__input">
+        </div>
+         <div class="order__input__wrap">
+          <div class="order__buy__label order__buy__label__required">Номер телефона</div>
+          <input name="phone" type="text" placeholder="Введите номер телефона..." class="order__input">
+        </div>
+        <div class="order__input__wrap">
+          <div class="order__buy__label order__buy__label__required">Страна</div>
+          <div name="name" type="text" class="order__input order__input__select">
+            <div class="order__input__select__name">Россия</div>
+            <div class="order__input__select__status"><svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 0.60012C12 0.753712 11.9347 0.907305 11.8047 1.0243L6.47141 5.82406C6.21075 6.05865 5.78942 6.05865 5.52876 5.82406L0.195497 1.0243C-0.0651658 0.789711 -0.0651658 0.410529 0.195497 0.175941C0.45616 -0.0586471 0.877488 -0.0586471 1.13815 0.175941L6.00008 4.55152L10.862 0.175941C11.1227 -0.0586471 11.544 -0.0586471 11.8047 0.175941C11.9347 0.292935 12 0.446528 12 0.60012Z" fill="#272727"/>
+</svg>
+</div>
+            <div class="order__input__select__options">
+              <input class="order__input__select__hidden" name="country" value="Россия" type="hidden">
+              <div class="order__input__option order__input__select__selected">Россия</div>
+              <div class="order__input__option">Страна 1</div>
+              <div class="order__input__option">Страна 2</div>
+              <div class="order__input__option">Страна 3</div>
+              <div class="order__input__option">Страна 4</div>
+              <div class="order__input__option">Страна 5</div>
+            </div>
+          </div>
+        </div>
+         <div class="order__input__wrap">
+          <div class="order__buy__label order__buy__label__required">Регоин</div>
+          <input name="surname" type="text" placeholder="Введите фамилию..." class="order__input">
+        </div>
+         <div class="order__input__wrap">
+          <div class="order__buy__label order__buy__label__required">Населённый пункт</div>
+          <input name="mail" type="text" placeholder="Введите вашу почту..." class="order__input">
+        </div>
+         <div class="order__input__wrap">
+          <div class="order__buy__label order__buy__label__required">Индекс</div>
+          <input name="phone" type="text" placeholder="Введите номер телефона..." class="order__input">
+        </div>
+        <div class="order__input__wrap">
+          <div class="order__buy__label order__buy__label__required">Адрес</div>
+          <input name="mail" type="text" placeholder="Введите вашу почту..." class="order__input">
+        </div>
+         <div class="order__input__wrap">
+          <div class="order__buy__label">Дополнительные данные адреса (не обязательно)</div>
+          <input name="phone" type="text" placeholder="Введите номер телефона..." class="order__input">
+        </div>
+       </div>
+       <div class="order__buy">
+         <div class="text_med">Заказ на сумму:</div>
+         <div class="order__buy__row">
+           <div class="text_old">Товары - 15 шт</div>
+           <div class="text_med">114 630 Р</div>
+         </div>
+         <div class="text_med">Доставка:</div>
+         <div class="order__buy__radios">
+           <div class="order__buy__input order__buy__radio">
+             <div class="order__buy__input__status order__buy__input__status_active"></div>
+             <div class="order__buy__input__name">Почта России (ускоренная): 2070 Р</div>
+           </div>
+           <div class="order__buy__input order__buy__radio">
+             <div class="order__buy__input__status"></div>
+             <div class="order__buy__input__name">Почта России (обычная): 696 Р</div>
+           </div>
+           <div class="order__buy__input order__buy__radio">
+             <div class="order__buy__input__status"></div>
+             <div class="order__buy__input__name">СДЭК до двери: 1120 Р</div>
+           </div>
+         </div>
+         <div class="buy">Доставка заказа оплачивается при 
+получении. Цена носит справочный 
+характер!</div>
+         <div class="text_med order__buy__deltext">Оплата:</div>
+         <div class="order__buy__radios">
+           <div class="order__buy__input">
+             <div class="order__buy__input__status order__buy__input__status_active"></div>
+             <div class="order__buy__input__name">Оплата банковской картой
+              <div class="text_old text_small">После оплаты заказа вы получите
+подтверждение по email</div></div>
+           </div>
+         </div>
+         <div class="order__buy__confirm">Оформить заказ</div>
        </div>
      </div>
    </div>
- </div>
- <div class="catalog catalog_2">
-   <div class="catalog__block">
-     <div id="catalog_hinata" class="catalog__item">
-      <div class="hinata__eff">
-        <div class="hinata__eff__title">
-          LIMITED EDITION
-        </div>
-        <div class="hinata__eff__grad">
-          LIMITED EDITION
-        </div>
-        <div class="hinata__eff__grad">
-          LIMITED EDITION
-        </div>
-        <div class="hinata__eff__grad">
-          LIMITED EDITION
-        </div>
-        <div class="hinata__eff__grad">
-          LIMITED EDITION
-        </div>
-        <div class="hinata__eff__grad">
-          LIMITED EDITION
-        </div>
-      </div>
-       <div class="catalog__item__main">
-         <div class="catalog__item__info">
-           <div class="catalog__item__text text_med text_bold">LIMITED EDITION</div>
-           <div class="catalog__item__text text_med text_grey">EVERY SINGLE GARMENT
-IS A UNIQUE PIECE OF FUNCTIONALITY AND ART</div>
-           <div class="catalog__item__text text_med text_grey">HANDLE WITH CARE  MADE IN RUSSIA</div>
-           <div class="buy">BUY</div>
-         </div>
-       </div>
-       <div class="catalog__item__img">
-         <img src="img/hinata.png" alt="">
-       </div>
-     </div>
-     <div class="catalog__item" id="jojo__eff">
-       <div class="catalog__item__main">
-         <div id="artwork" class="catalog__item__info">
-           <div class="catalog__item__text text_big text_bold">ARTWORKS</div>
-         </div>
-       </div>
-       <div class="catalog__item__main">
-         <div class="catalog__item__info">
-           <div class="catalog__item__text text_med text_bold">OUR GALLERY</div>
-           <div class="catalog__item__text text_med text_grey">ARTWORKS OF THE BRAND
-IS PRESENTED IN THE FORM OF CANVASES OR POSTERS</div>
-         </div>
-       </div>
-       <div class="jojo__eff__text">
-         <div class="jojo__eff__text__item"><span>ARTWORKS</span></div>
-         <div class="jojo__eff__text__item"><span>ARTWORKS</span></div>
-         <div class="jojo__eff__text__item"><span>ARTWORKS</span></div>
-       </div>
-       <div class="buy_white"><span>BUY</span></div>
-       <div class="catalog__item__img">
-         <img src="img/jojo.png" alt="">
-       </div>
-     </div>
-   </div>
- </div>  
- <section class="catalog catalog_3">
-   <div class="catalog__block">
-     <div class="catalog__item catalog__item__lasteff" id="catalog_kaguya">
-       <img src="/img/kaguya.png" alt="">
-       <div class="catalog__item__texteff">
-         <div class="catalog__texteff">CLOTHES</div>
-         <div class="catalog__texteff">CLOTHES</div>
-         <div class="catalog__texteff">CLOTHES</div>
-       </div>
-     </div>
-     <div class="catalog__item catalog__item__lasteff" id="catalog_hinata2">
-       <img src="/img/hinata_hoodie.png" alt="">
-       <div class="catalog__item__texteff">
-         <div class="catalog__texteff">HOODIE</div>
-         <div class="catalog__texteff">HOODIE</div>
-         <div class="catalog__texteff">HOODIE</div>
-       </div>
-     </div>
-     <div class="catalog__item catalog__item__lasteff" id="catalog_itachi">
-       <img src="/img/itachi.png" alt="">
-       <div class="catalog__item__texteff">
-         <div class="catalog__texteff">POSTERS</div>
-         <div class="catalog__texteff">POSTERS</div>
-         <div class="catalog__texteff">POSTERS</div>
-       </div>
-     </div>
-   </div>
- </section> 
+ </section>
+
+
 <link rel="stylesheet" href="/temp/footer.css">
 <footer class="footer">
 	<div class="container">

@@ -12,7 +12,7 @@
 		font-size: 1.1rem;
 		&:nth-child(2){
 			top: 5rem;
-		}
+		} 
 		&_purple{
 			background: #C6BBEC;
 		}
@@ -84,6 +84,7 @@
 		flex-direction: column;
 		height: 100%;
 		transition: all .3s;
+		position: relative;
 		&__item{
 			flex: 0 1 50%;
 			background-clip: content-box;
@@ -170,7 +171,8 @@
 			margin-top: 0.6rem;
 		}
 		&_active{
-			background: #FFD8C4 !important;
+			background: #272727 !important; 
+			color: #F9FAFE;
 		}
 	}
 	&__size{
