@@ -6,6 +6,9 @@ $main_trans:.3s;
 		flex: 0 0 33.333%;
 		height: inherit;
 	}
+	@media (max-width:450px) {
+		height: auto;
+	}
 }
 #catalog_kaguya{
 	background: linear-gradient(101.82deg, #FFEFB7 -169.03%, #DBEFFC -48.23%, #FFB691 16.05%, #C6BBEC 86.59%);
@@ -22,15 +25,23 @@ $main_trans:.3s;
 .catalog__block{
 	height: 100%;
 	display: flex;
+	@media (max-width:450px) {
+		flex-direction: column;
+	}
 }
 .catalog__item__lasteff{
 	position: relative;
+	overflow: hidden;
 	& img{
 		position: absolute;
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%,-50%);
 		transition: all $catalog_trans;
+		max-width: 100%;
+	}
+	@media (max-width:450px) {
+		min-height: 405px !important;
 	}
 	&:hover{
 		.catalog__texteff:nth-child(1){

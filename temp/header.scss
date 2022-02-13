@@ -1,3 +1,6 @@
+.header__mob__burger{
+	display: none;
+}
 .header{
 	padding: 18px 0;
 	height: 70px;
@@ -39,6 +42,152 @@
 }
 @media (max-width:435px) {
 	.header{
-		display: none;
+		position: fixed;
+		top: auto !important;
+		bottom: 0;
+		left: 0;
+		top: 0;
+		z-index: 10000;
+		height: auto;
+		width: 100vw;
+		padding: 0;
+		&__controls{
+			top: 0;
+		}
+		&__block{
+			height: 80px;
+		}
+		&__logo{
+			display: none;
+		}
+		&__links{
+			position: fixed;
+			flex-direction: column;
+			background: #EAEDF7;
+			top: 0;
+			bottom: 80px;
+			left: 0;
+			right: 0;
+			margin-left: 0;
+			padding-top: 70px;
+			padding-left: 20px;
+			grid-gap: 60px;
+			opacity: 0;
+			visibility: hidden;
+			transition: all .5s;
+			&_active{
+				opacity: 1;
+				visibility: visible;
+			}
+			& .btn_blue{
+				background: transparent !important;
+				font-size: 18px;
+				color: #949494;
+				position: relative;
+				&:after{
+					content: "";
+					position: absolute;
+					height: 1px;
+					background: #949494;
+					opacity: 0.4;
+					bottom: -30px;
+					left: -40px;
+					right: -40px;
+				}
+			}
+
+		}
+		& .btn_small{
+			width: 40px;
+			height: 40px;
+			border-radius: 5px;
+		}
+		&__mob__burger{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 40px;
+			height: 40px;
+			background: #DBEFFC;
+			border-radius: 5px;
+			grid-gap: 3px;
+			&__line{
+				background: #0A0B11;
+				width: 20px;
+				height: 2px;
+				border-radius: 5px;
+				transition: all .5s;
+			}
+			&_active{
+				& .header__mob__burger__line{
+					&:nth-child(2) {
+						opacity: 0;
+						visibility: hidden;
+					}
+					&:nth-child(1) {
+						transform: rotate(45deg) translate(2px,4px);
+					}
+					&:nth-child(3) {
+						transform: rotate(-45deg) translate(3px,-4px);
+					}
+				}
+			}
+		}
+	}
+}
+.btn_blue{
+	position: relative;
+	& svg{
+		position: relative;
+		z-index: 1000;
+	}
+}
+.search{
+	position: absolute;
+	border: none;
+	outline: none;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	height: 100%;
+	background: #C6BBEC;
+	border-radius: 5px;
+	width: 28vw;
+	max-width: 31rem;
+	transition: all .5s;
+	transform: translateY(150%);
+	opacity: 0;
+	visibility: hidden;
+	color: #272727;
+	padding-left: 1.3vw;
+	&_active{
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+}
+.search_btn{
+	&:after{
+		content: '';
+		position: absolute;
+		right: 100%;
+		bottom: 20%;
+		max-width: 28rem;
+		width: 24vw;
+		height: 1px;
+		background: #272727;
+		border-radius: 1px;
+		opacity: 0;
+		visibility: hidden;
+		transition: all .3s ease 0.4s;
+		transform: translateY(10px);
+	}
+	&_active{
+		&:after{
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0px);
+		}
 	}
 }

@@ -37,5 +37,30 @@ $(document).ready(function(){
 		$(this).find('.order__buy__input__status').addClass('order__buy__input__status_active')
 	})
 
+	function checkRequired () {
+		let check = true
+		for (let i = 0; i < $('.order__check__input').length;i++) {
+			if ($('.order__check__input').eq(i).val() == '') {
+				check = false
+				$('.order__check__input').eq(i).addClass('order__input__failed')
+			}
+		}
+		return check
+	}
+	$('.order__buy__confirm').on('click',function (e) {
+		
+		if (checkRequired () == false) {
+			e.preventDefault()
+		}
+	})
+	$('.order__check__input').on('keypress',function () {
+		$(this).removeClass('order__input__failed')
+		
+	})
+
+
+
+
+
 })
 

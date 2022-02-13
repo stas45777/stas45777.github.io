@@ -15,25 +15,25 @@
  <!-- @import "../temp/back.kit" -->
  
 
- <section class="order">
+ <form action="#" class="order">
    <div class="container">
      <div class="order__block">
        <div class="order__select">
          <div class="order__input__wrap">
           <div class="order__buy__label order__buy__label__required">Имя</div>
-          <input name="name" type="text" placeholder="Введите имя..." class="order__input">
+          <input value="" name="name" type="text" placeholder="Введите имя..." class="order__check__input order__input">
         </div>
          <div class="order__input__wrap">
           <div class="order__buy__label order__buy__label__required">Фамилия</div>
-          <input name="surname" type="text" placeholder="Введите фамилию..." class="order__input">
+          <input name="surname" type="text" placeholder="Введите фамилию..." class="order__check__input order__input">
         </div>
          <div class="order__input__wrap">
           <div class="order__buy__label order__buy__label__required">Адрес электронной почты</div>
-          <input name="mail" type="text" placeholder="Введите вашу почту..." class="order__input">
+          <input name="mail" type="text" placeholder="Введите вашу почту..." class="order__check__input order__input">
         </div>
          <div class="order__input__wrap">
           <div class="order__buy__label order__buy__label__required">Номер телефона</div>
-          <input name="phone" type="text" placeholder="Введите номер телефона..." class="order__input">
+          <input name="phone" type="text" placeholder="Введите номер телефона..." class="order__check__input order__input">
         </div>
         <div class="order__input__wrap">
           <div class="order__buy__label order__buy__label__required">Страна</div>
@@ -44,7 +44,7 @@
 </svg>
 </div>
             <div class="order__input__select__options">
-              <input class="order__input__select__hidden" name="country" value="Россия" type="hidden">
+              <input class="order__check__input order__input__select__hidden" name="country" value="Россия" type="hidden">
               <div class="order__input__option order__input__select__selected">Россия</div>
               <div class="order__input__option">Страна 1</div>
               <div class="order__input__option">Страна 2</div>
@@ -56,19 +56,19 @@
         </div>
          <div class="order__input__wrap">
           <div class="order__buy__label order__buy__label__required">Регоин</div>
-          <input name="surname" type="text" placeholder="Введите фамилию..." class="order__input">
+          <input name="surname" type="text" placeholder="Введите фамилию..." class="order__check__input order__input">
         </div>
          <div class="order__input__wrap">
           <div class="order__buy__label order__buy__label__required">Населённый пункт</div>
-          <input name="mail" type="text" placeholder="Введите вашу почту..." class="order__input">
+          <input name="mail" type="text" placeholder="Введите вашу почту..." class="order__check__input order__input">
         </div>
          <div class="order__input__wrap">
           <div class="order__buy__label order__buy__label__required">Индекс</div>
-          <input name="phone" type="text" placeholder="Введите номер телефона..." class="order__input">
+          <input name="phone" type="text" placeholder="Введите номер телефона..." class="order__check__input order__input">
         </div>
         <div class="order__input__wrap">
           <div class="order__buy__label order__buy__label__required">Адрес</div>
-          <input name="mail" type="text" placeholder="Введите вашу почту..." class="order__input">
+          <input name="mail" type="text" placeholder="Введите вашу почту..." class="order__check__input order__input">
         </div>
          <div class="order__input__wrap">
           <div class="order__buy__label">Дополнительные данные адреса (не обязательно)</div>
@@ -108,11 +108,11 @@
 подтверждение по email</div></div>
            </div>
          </div>
-         <div class="order__buy__confirm">Оформить заказ</div>
+         <input type="submit" value="Оформить заказ" class="order__buy__confirm">
        </div>
      </div>
    </div>
- </section>
+ </form>
 
 
  <!-- @import "../temp/footer.kit" -->

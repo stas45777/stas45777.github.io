@@ -31,6 +31,11 @@
 </defs>
 </svg>
 				</a>
+				<div class="header__mob__burger">
+					<div class="header__mob__burger__line"></div>
+					<div class="header__mob__burger__line"></div>
+					<div class="header__mob__burger__line"></div>
+				</div>
 				<div class="header__links">
 					<a href="#" class="btn btn_blue">НОВИНКИ</a>
 					<a href="#" class="btn btn_blue">ИСКУССТВО</a>
@@ -41,7 +46,8 @@
 				</div>
 			</div>
 			<div class="header__controls">
-				<div class="btn_small btn_blue">
+				<div class="btn_small btn_blue search_btn">
+					<input type="text" class="search">
 					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M7.2 0C11.1765 0 14.4 3.22355 14.4 7.2C14.4 8.89982 13.811 10.4621 12.8258 11.6937L15.7657 14.6343C16.0781 14.9467 16.0781 15.4533 15.7657 15.7657C15.4773 16.0541 15.0235 16.0763 14.7097 15.8322L14.6343 15.7657L11.6937 12.8258C10.4621 13.811 8.89982 14.4 7.2 14.4C3.22355 14.4 0 11.1765 0 7.2C0 3.22355 3.22355 0 7.2 0ZM7.19996 1.59996C4.10717 1.59996 1.59996 4.10717 1.59996 7.19996C1.59996 10.2928 4.10717 12.8 7.19996 12.8C10.2928 12.8 12.8 10.2928 12.8 7.19996C12.8 4.10717 10.2928 1.59996 7.19996 1.59996Z" fill="#272727"/>
 </svg>
@@ -65,25 +71,25 @@
 </a>
 <script src="/temp/back.js"></script> 
 
- <section class="order">
+ <form action="#" class="order">
    <div class="container">
      <div class="order__block">
        <div class="order__select">
          <div class="order__input__wrap">
           <div class="order__buy__label order__buy__label__required">Имя</div>
-          <input name="name" type="text" placeholder="Введите имя..." class="order__input">
+          <input value="" name="name" type="text" placeholder="Введите имя..." class="order__check__input order__input">
         </div>
          <div class="order__input__wrap">
           <div class="order__buy__label order__buy__label__required">Фамилия</div>
-          <input name="surname" type="text" placeholder="Введите фамилию..." class="order__input">
+          <input name="surname" type="text" placeholder="Введите фамилию..." class="order__check__input order__input">
         </div>
          <div class="order__input__wrap">
           <div class="order__buy__label order__buy__label__required">Адрес электронной почты</div>
-          <input name="mail" type="text" placeholder="Введите вашу почту..." class="order__input">
+          <input name="mail" type="text" placeholder="Введите вашу почту..." class="order__check__input order__input">
         </div>
          <div class="order__input__wrap">
           <div class="order__buy__label order__buy__label__required">Номер телефона</div>
-          <input name="phone" type="text" placeholder="Введите номер телефона..." class="order__input">
+          <input name="phone" type="text" placeholder="Введите номер телефона..." class="order__check__input order__input">
         </div>
         <div class="order__input__wrap">
           <div class="order__buy__label order__buy__label__required">Страна</div>
@@ -94,7 +100,7 @@
 </svg>
 </div>
             <div class="order__input__select__options">
-              <input class="order__input__select__hidden" name="country" value="Россия" type="hidden">
+              <input class="order__check__input order__input__select__hidden" name="country" value="Россия" type="hidden">
               <div class="order__input__option order__input__select__selected">Россия</div>
               <div class="order__input__option">Страна 1</div>
               <div class="order__input__option">Страна 2</div>
@@ -106,19 +112,19 @@
         </div>
          <div class="order__input__wrap">
           <div class="order__buy__label order__buy__label__required">Регоин</div>
-          <input name="surname" type="text" placeholder="Введите фамилию..." class="order__input">
+          <input name="surname" type="text" placeholder="Введите фамилию..." class="order__check__input order__input">
         </div>
          <div class="order__input__wrap">
           <div class="order__buy__label order__buy__label__required">Населённый пункт</div>
-          <input name="mail" type="text" placeholder="Введите вашу почту..." class="order__input">
+          <input name="mail" type="text" placeholder="Введите вашу почту..." class="order__check__input order__input">
         </div>
          <div class="order__input__wrap">
           <div class="order__buy__label order__buy__label__required">Индекс</div>
-          <input name="phone" type="text" placeholder="Введите номер телефона..." class="order__input">
+          <input name="phone" type="text" placeholder="Введите номер телефона..." class="order__check__input order__input">
         </div>
         <div class="order__input__wrap">
           <div class="order__buy__label order__buy__label__required">Адрес</div>
-          <input name="mail" type="text" placeholder="Введите вашу почту..." class="order__input">
+          <input name="mail" type="text" placeholder="Введите вашу почту..." class="order__check__input order__input">
         </div>
          <div class="order__input__wrap">
           <div class="order__buy__label">Дополнительные данные адреса (не обязательно)</div>
@@ -158,11 +164,11 @@
 подтверждение по email</div></div>
            </div>
          </div>
-         <div class="order__buy__confirm">Оформить заказ</div>
+         <input type="submit" value="Оформить заказ" class="order__buy__confirm">
        </div>
      </div>
    </div>
- </section>
+ </form>
 
 
 <link rel="stylesheet" href="/temp/footer.css">

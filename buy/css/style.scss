@@ -5,7 +5,7 @@
 	&__block{
 		display: flex;
 		align-items: flex-start;
-		justify-content: space-between;
+		justify-content: space-between; 
 	}
 	&__select{
 		flex: 0 0 66.667%;
@@ -93,6 +93,8 @@
 			justify-content: center;
 			align-items: center;
 			cursor: pointer;
+			width: 100%;
+			border: none;
 		}
 	}
 	&__input{
@@ -103,6 +105,10 @@
 		background: transparent;
 		padding: 0 1.5rem;
 		outline: none;
+		&__failed{
+			color: #FF605F;
+			border-color: #FF605F;
+		}
 		&__wrap{
 			flex: 0 0 48%;
 			position: relative;

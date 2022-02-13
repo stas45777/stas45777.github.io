@@ -324,6 +324,9 @@ $main_trans:.3s;
 	font-weight: 800;
 	left: 1rem;
 	pointer-events: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
 
 	&__item{
@@ -335,6 +338,8 @@ $main_trans:.3s;
 		color: #EDE9F9;
 		width: 280px;
 		right: 20px;
+		display: flex;
+		justify-content: center;
 		& span{
 			position: relative;
 			left: 20px;
@@ -365,6 +370,7 @@ $main_trans:.3s;
 	}
 	.jojo__eff__text{
 		bottom: -60px;
+		left: -1.4rem;
 	}
 	#jojo__eff .buy_white{
 		bottom: -70px;
@@ -391,6 +397,9 @@ $main_trans:.3s;
 	.main{
 		background-size: cover;
 	}
+	.jojo__eff__text{
+		left: -2.5rem;
+	}
 }
 @media (max-width:1024px) {
 	.catalog__item__img img{
@@ -413,6 +422,7 @@ $main_trans:.3s;
 	}
 	.jojo__eff__text {
  		bottom: -40px;
+ 		left: -4.64rem;
 	}
 	#jojo__eff .buy_white {
   		bottom: -50px;
@@ -457,6 +467,7 @@ $main_trans:.3s;
 	}
 	.jojo__eff__text {
  		bottom: -40px;
+ 		left: -9.5rem;
 	}
 	#jojo__eff:hover .buy_white {
   		bottom: -4rem;

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .main {
   background: #EAEDF7;
   padding-top: 6rem;
@@ -116,6 +117,10 @@
 }
 .main__catalog__item_active {
   margin-right: 25%;
+  z-index: 4 !important;
+}
+.main__catalog__item_active .main__catalog__item__head:hover:after {
+  opacity: 0.8 !important;
 }
 .main__catalog__item_active .main__catalog__item__info {
   border-bottom-right-radius: 0px !important;
@@ -153,11 +158,25 @@
       -ms-flex: 0 0 25%;
           flex: 0 0 25%;
   padding: 0 5px;
-  -webkit-transition: all 0.5s ease 0.2s;
-  transition: all 0.5s ease 0.2s;
+  -webkit-transition: all 0.5s linear 0.1s;
+  transition: all 0.5s linear 0.1s;
   z-index: 3;
   right: 0;
   top: 0;
+}
+.main__catalog__item__wrap:nth-child(4n-1) .main__catalog__more {
+  left: auto;
+  right: 100%;
+}
+.main__catalog__item__wrap:nth-child(4n-1)[class*=main__catalog__item_active] {
+  margin-right: 0 !important;
+}
+.main__catalog__item__wrap:nth-child(4n) .main__catalog__more {
+  left: auto;
+  right: 100%;
+}
+.main__catalog__item__wrap:nth-child(4n)[class*=main__catalog__item_active] {
+  margin-right: 0 !important;
 }
 .main__catalog__item__head {
   height: 80%;
@@ -180,6 +199,34 @@
 .main__catalog__item__head img {
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.main__catalog__item__head:after {
+  content: "Подробнее";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #F9FAFE;
+  opacity: 0;
+  -webkit-box-shadow: 0px 0px 23.2949px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 0px 23.2949px rgba(0, 0, 0, 0.05);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  color: #272727;
+  cursor: pointer;
 }
 .main__catalog__item__info {
   width: 100%;
@@ -198,14 +245,4 @@
   padding: 2rem;
   border-bottom-left-radius: 0.6rem;
   border-bottom-right-radius: 0.6rem;
-}
-
-.main__catalog__item__aboslute {
-  position: absolute;
-  right: 0;
-  width: 25%;
-  top: 0;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  z-index: 6;
 }

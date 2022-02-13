@@ -375,6 +375,16 @@
   font-weight: 800;
   left: 1rem;
   pointer-events: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .jojo__eff__text__item {
   -webkit-transition: all 0.5s;
@@ -387,6 +397,12 @@
   color: #EDE9F9;
   width: 280px;
   right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .jojo__eff__text__item span {
   position: relative;
@@ -423,6 +439,7 @@
 
   .jojo__eff__text {
     bottom: -60px;
+    left: -1.4rem;
   }
 
   #jojo__eff .buy_white {
@@ -456,6 +473,10 @@
   .main {
     background-size: cover;
   }
+
+  .jojo__eff__text {
+    left: -2.5rem;
+  }
 }
 @media (max-width: 1024px) {
   .catalog__item__img img {
@@ -484,6 +505,7 @@
 
   .jojo__eff__text {
     bottom: -40px;
+    left: -4.64rem;
   }
 
   #jojo__eff .buy_white {
@@ -540,6 +562,7 @@
 
   .jojo__eff__text {
     bottom: -40px;
+    left: -9.5rem;
   }
 
   #jojo__eff:hover .buy_white {

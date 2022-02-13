@@ -132,6 +132,8 @@
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  width: 100%;
+  border: none;
 }
 .order__input {
   width: 100%;
@@ -141,6 +143,10 @@
   background: transparent;
   padding: 0 1.5rem;
   outline: none;
+}
+.order__input__failed {
+  color: #FF605F;
+  border-color: #FF605F;
 }
 .order__input__wrap {
   -webkit-box-flex: 0;

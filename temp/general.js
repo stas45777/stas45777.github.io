@@ -26,5 +26,15 @@ $(document).ready(function(){
 		count_res++
 		$('.count__res').text(count_res)
 	})
+	// Настройка хедэра
+
+	$('.header__mob__burger').on('click',function () {
+		$('.header__links').toggleClass('header__links_active')
+		$('.header__mob__burger').toggleClass('header__mob__burger_active')
+	})
+	$('.search_btn').on('click',function () {
+		$('.search').toggleClass('search_active')
+		$('.search_btn').toggleClass('search_btn_active')
+	})
 })
 
