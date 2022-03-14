@@ -4,6 +4,7 @@ $main_trans:.3s;
 	background: url('../img/main_poster.png');
 	overflow: hidden;
 	position: relative;
+	background-size: cover;
 	background-position: center center;
 	& .container{
 		height: 100%;

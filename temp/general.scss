@@ -28,7 +28,7 @@ a {
 
 
 body{
-	background: #F9FAFE;
+	background: #EAEDF7;
 	color: #272727;
 	font-family: Roboto;
 }
@@ -60,6 +60,10 @@ body{
 	&_grey{
 		background: #474747;
 		color: #fff;
+		&:hover{
+			background: #686868;
+			color: #F9FAFE;
+		}
 	}
 	&_white{
 		background: #EAEDF7;
@@ -260,5 +264,10 @@ body{
 	}
 	html {
 		font-size: 6.5px;
+	}
+}
+@media (max-width: 435px) {
+	html {
+		font-size: 14px;
 	}
 }

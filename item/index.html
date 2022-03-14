@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<meta charset="UTF-8">
+  <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Fil</title>
+	<title>Fil</title> 
 	<link rel="stylesheet" href="css/style.css">
 	<script src="js/jquery-3.4.1.js"></script>
 	<script src="js/script.js"></script>
@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head> 
 <body>
+<meta charset="UTF-8">
 <link rel="stylesheet" href="/temp/general.css">
 <link rel="stylesheet" href="/temp/header.css">
 <script type="text/javascript" src="/temp/loader.js"></script>
@@ -37,12 +38,52 @@
 					<div class="header__mob__burger__line"></div>
 				</div>
 				<div class="header__links">
-					<a href="#" class="btn btn_blue">НОВИНКИ</a>
-					<a href="#" class="btn btn_blue">ИСКУССТВО</a>
-					<a href="#" class="btn btn_blue">КОЛЛЕКЦИИ</a>
+					<div id="new" href="/new" class="btn btn_blue">НОВИНКИ</div>
+					<a href="/new" class="btn btn_blue">ИСКУССТВО</a>
+					<div id="collection" class="btn btn_blue">КОЛЛЕКЦИИ</div>
 					<a href="#" class="btn btn_blue">ПОСТЕРЫ</a>
 					<a href="#" class="btn btn_blue">О НАС</a>
 					<a href="#" class="btn btn_blue">ДОСТАВКА</a>
+				</div>
+				<div class="header__submenu">
+					<div class="container">
+						<div id="collection__submenu" class="header__submenu__block">
+							<div class="header__submenu__col">
+								<div class="header__submenu__title text_small">JAPANSE MOOD</div>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+								<a href="#" class="header__submenu__el">EVANGELION</a>
+								<a href="#" class="header__submenu__el">DEMON SLAYER</a>
+								<a href="#" class="header__submenu__el">ATTACK ON TITAN</a>
+								<a href="#" class="header__submenu__el">SHAMAN KING</a>
+								<a href="#" class="header__submenu__el">JOJO</a>
+								<a href="#" class="header__submenu__el">HERO ACADEMIA</a>
+							</div>
+							<div class="header__submenu__col">
+								<div class="header__submenu__title text_small">NIKIFILINI</div>
+								<a href="#" class="header__submenu__el">FW 21</a>
+								<a href="#" class="header__submenu__el">FW 20</a>
+								<a href="#" class="header__submenu__el">БАЗА</a>
+							</div>
+						</div>
+						<div id="new__submenu" class="header__submenu__block">
+							<div class="header__submenu__col">
+								<div class="header__submenu__title text_small">JAPANSE MOOD</div>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+							</div>
+							<div class="header__submenu__col">
+								<div class="header__submenu__title text_small">NIKIFILINI</div>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="header__controls">
@@ -105,7 +146,11 @@
         <div class="product__info">
           <div class="product__name">HOODIE / HYUGA HINATA</div>
           <div class="product__cost"><div class="product__cost_old">8 990Р</div> 7 642Р</div>
-          <div class="product__size"><span>Размер</span>
+          <div class="product__mob">Подробнее <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13 0.70014C13 0.879331 12.9292 1.05852 12.7884 1.19502L7.01069 6.79473C6.72831 7.06842 6.27187 7.06842 5.98949 6.79473L0.211789 1.19502C-0.0705962 0.921329 -0.0705962 0.478951 0.211789 0.205265C0.494174 -0.0684216 0.950612 -0.0684216 1.233 0.205265L6.50009 5.31011L11.7672 0.205265C12.0496 -0.0684216 12.506 -0.0684216 12.7884 0.205265C12.9292 0.341758 13 0.520949 13 0.70014Z" fill="#474747"/>
+</svg>
+</div>
+          <div class="product__size mob__eff"><span>Размер</span>
             <div class="product__cost__block">
               <div class="product__cost__btn btn btn_blue">S</div>
               <div class="product__cost__btn btn btn_blue">M</div>
@@ -116,14 +161,14 @@
               <div class="btn btn_white">Таблица размеров</div>
             </div>
           </div>
-          <div class="product__color"><span>Цвет</span>
+          <div class="product__color mob__eff"><span>Цвет</span>
             <div class="product__color__block">
               <div class="mark mark_black mark_active"></div>
               <div class="mark mark_orange"></div>
               <div class="mark mark_white"></div>
             </div>
           </div>
-          <div class="product__desc"><span>Описание</span>
+          <div class="product__desc mob__eff"><span>Описание</span>
             <div class="product__desc__text">
               Теплый и приятный к телу худи из высококачественного хлопка с флисовым подкладом. В просторном основном кармане скрывается несколько небольших карманов для хранения мелочи, ключей или телефона. Свободный крой и качественный материал позволят оставаться активным даже в прохладную погоду.
             </div>
@@ -200,7 +245,8 @@
  </section> 
 
 <link rel="stylesheet" href="/temp/footer.css">
-<footer class="footer">
+<div class="footer__wrap">
+	<footer class="footer">
 	<div class="container">
 		<div class="footer__block">
 			<div class="footer__links">
@@ -229,5 +275,6 @@
 	<div class="container">
 		<div class="footer__copy__block text">©NikiFilini.com 2022</div>
 	</div>
-</div></body>
+</div>
+</div> </body>
 </html>

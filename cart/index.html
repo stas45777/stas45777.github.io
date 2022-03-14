@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head> 
 <body>
+<meta charset="UTF-8">
 <link rel="stylesheet" href="/temp/general.css">
 <link rel="stylesheet" href="/temp/header.css">
 <script type="text/javascript" src="/temp/loader.js"></script>
@@ -37,12 +38,52 @@
 					<div class="header__mob__burger__line"></div>
 				</div>
 				<div class="header__links">
-					<a href="#" class="btn btn_blue">НОВИНКИ</a>
-					<a href="#" class="btn btn_blue">ИСКУССТВО</a>
-					<a href="#" class="btn btn_blue">КОЛЛЕКЦИИ</a>
+					<div id="new" href="/new" class="btn btn_blue">НОВИНКИ</div>
+					<a href="/new" class="btn btn_blue">ИСКУССТВО</a>
+					<div id="collection" class="btn btn_blue">КОЛЛЕКЦИИ</div>
 					<a href="#" class="btn btn_blue">ПОСТЕРЫ</a>
 					<a href="#" class="btn btn_blue">О НАС</a>
 					<a href="#" class="btn btn_blue">ДОСТАВКА</a>
+				</div>
+				<div class="header__submenu">
+					<div class="container">
+						<div id="collection__submenu" class="header__submenu__block">
+							<div class="header__submenu__col">
+								<div class="header__submenu__title text_small">JAPANSE MOOD</div>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+								<a href="#" class="header__submenu__el">EVANGELION</a>
+								<a href="#" class="header__submenu__el">DEMON SLAYER</a>
+								<a href="#" class="header__submenu__el">ATTACK ON TITAN</a>
+								<a href="#" class="header__submenu__el">SHAMAN KING</a>
+								<a href="#" class="header__submenu__el">JOJO</a>
+								<a href="#" class="header__submenu__el">HERO ACADEMIA</a>
+							</div>
+							<div class="header__submenu__col">
+								<div class="header__submenu__title text_small">NIKIFILINI</div>
+								<a href="#" class="header__submenu__el">FW 21</a>
+								<a href="#" class="header__submenu__el">FW 20</a>
+								<a href="#" class="header__submenu__el">БАЗА</a>
+							</div>
+						</div>
+						<div id="new__submenu" class="header__submenu__block">
+							<div class="header__submenu__col">
+								<div class="header__submenu__title text_small">JAPANSE MOOD</div>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+							</div>
+							<div class="header__submenu__col">
+								<div class="header__submenu__title text_small">NIKIFILINI</div>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+								<a href="#" class="header__submenu__el">NARUTO</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="header__controls">
@@ -203,7 +244,8 @@
 
 
 <link rel="stylesheet" href="/temp/footer.css">
-<footer class="footer">
+<div class="footer__wrap">
+	<footer class="footer">
 	<div class="container">
 		<div class="footer__block">
 			<div class="footer__links">
@@ -232,5 +274,6 @@
 	<div class="container">
 		<div class="footer__copy__block text">©NikiFilini.com 2022</div>
 	</div>
-</div></body>
+</div>
+</div> </body>
 </html>

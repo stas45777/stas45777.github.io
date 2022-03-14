@@ -47,7 +47,26 @@ $(document).ready(function(){
 		$(this).addClass('product__cost_active')
 	}
 	$('.product__cost__btn').on('click',checkSize)
-	$('.product__block').height($('.product__info').outerHeight())
+	if ($(window).width() > 435) {
+		$('.product__block').height($('.product__info').outerHeight())
 
+	} else {
+		$(window).on('scroll',function () {
+			if ($(window).scrollTop() >= 50) {
+				$('.mob__eff').addClass('mob__eff_active')
+				$('.product__mob').addClass('product__mob_noactive')
+			} else {
+				$('.mob__eff').removeClass('mob__eff_active')
+				$('.product__mob').removeClass('product__mob_noactive')
+			}
+		})
+	}
+	if ($(window).scrollTop() >= 50) {
+		$('.mob__eff').addClass('mob__eff_active')
+		$('.product__mob').addClass('product__mob_noactive')
+	}
+	$('.product__mob').on('click',function () {
+		$(window).scrollTop(75)
+	})
 })
 

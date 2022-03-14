@@ -109,6 +109,12 @@ $(document).ready(function(){
 			e.preventDefault()
 		}
 	})
+	if ($(window).width() <= 435) {
+		$('.main__catalog__item__wrap').off()
+		$('.main__catalog__item__wrap').on('click',function () {
+			$(this).addClass('main__catalog__item_active')
+		})
+	}
 	
 	
 

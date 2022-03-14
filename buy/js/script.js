@@ -37,12 +37,14 @@ $(document).ready(function(){
 		$(this).find('.order__buy__input__status').addClass('order__buy__input__status_active')
 	})
 
-	function checkRequired () {
+	function checkRequired (add_red = true) {
 		let check = true
 		for (let i = 0; i < $('.order__check__input').length;i++) {
 			if ($('.order__check__input').eq(i).val() == '') {
 				check = false
-				$('.order__check__input').eq(i).addClass('order__input__failed')
+				if (add_red) {
+					$('.order__check__input').eq(i).addClass('order__input__failed')
+				}
 			}
 		}
 		return check
@@ -53,10 +55,40 @@ $(document).ready(function(){
 			e.preventDefault()
 		}
 	})
+	let inputs_checked = checkRequired(add_red = false)
+	if (inputs_checked) {
+		$('.order__buy__confirm').addClass('order__buy__confirm_active')
+	} else {
+		$('.order__buy__confirm').removeClass('order__buy__confirm_active')
+	}
 	$('.order__check__input').on('keypress',function () {
 		$(this).removeClass('order__input__failed')
-		
+		inputs_checked = checkRequired(add_red = false)
+		if (inputs_checked) {
+			$('.order__buy__confirm').addClass('order__buy__confirm_active')
+		} else {
+			$('.order__buy__confirm').removeClass('order__buy__confirm_active')
+		}
 	})
+	$(window).on('click',function () {
+		for (let i = 0; i < $('input.order__input').length; i++) {
+			if ($('input.order__input').eq(i).val() != '') {
+				$('input.order__input').eq(i).addClass('order__input__select')
+			} else {
+				$('.order__check__input').eq(i).removeClass('order__input__select')
+			}
+		}
+	})
+	if ($(window).width() <= 435) {
+		$('.order__buy__confirm').on('click',function (e) {
+			e.preventDefault()
+			if ($(this).hasClass('order__buy__confirm_active')) {
+				$('.order__buy__mob').addClass('order__buy__mob_active')
+				$(this).attr('value','Оформить заказ')
+			}
+
+		})
+	}
 
 
 

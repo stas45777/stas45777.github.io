@@ -33,8 +33,35 @@ $(document).ready(function(){
 		$('.header__mob__burger').toggleClass('header__mob__burger_active')
 	})
 	$('.search_btn').on('click',function () {
-		$('.search').toggleClass('search_active')
-		$('.search_btn').toggleClass('search_btn_active')
+
+		$('.search').addClass('search_active')
+		$('.search_btn').addClass('search_btn_active')
 	})
+	$(document).on('click',function (e) {
+		if ($('.header__controls').has(e.target).length === 0) {
+			$('.search').removeClass('search_active')
+			$('.search_btn').removeClass('search_btn_active')
+		}
+	})
+	$('.header__links *').on('mouseenter',function () {
+		let link_attr = $(this).attr('id')
+		if (link_attr == undefined) {
+			return false
+		}
+		$('.header__submenu__block').removeClass('header__submenu__block_active')
+		$('.header__submenu').removeClass('header__submenu_active')
+		$('#' + link_attr + '__submenu').addClass('header__submenu__block_active')
+		$('.header__submenu').addClass('header__submenu_active')
+	})
+	$('.header').on('mouseleave',function () {
+		$('.header__submenu__block').removeClass('header__submenu__block_active')
+		$('.header__submenu').removeClass('header__submenu_active')
+	})
+
+
+	// Настройка футера
+	if (($('.footer__wrap').offset()['top']) < ($(window).height() - $('.footer__wrap').height())) {
+		$('.footer__wrap').addClass('footer__absolute')
+	}
 })
 

@@ -1,6 +1,8 @@
 .footer {
   background: #272727;
   color: #fff;
+  position: relative;
+  z-index: 3;
 }
 .footer__block {
   display: -webkit-box;
@@ -21,6 +23,9 @@
           flex: 0 0 40%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 .footer__links .btn {
   -webkit-box-flex: 1;
@@ -89,6 +94,8 @@
 
 .footer__copy {
   background: #1F1F1F;
+  position: relative;
+  z-index: 3;
 }
 .footer__copy__block {
   display: -webkit-box;
@@ -103,6 +110,27 @@
 
 @media (max-width: 435px) {
   .lang_active {
-    height: 20px;
+    height: 32px;
   }
+
+  .footer__block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .footer__links {
+    margin-bottom: 27px;
+  }
+
+  .footer__copy {
+    padding-bottom: 210px;
+  }
+}
+.footer__absolute {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
