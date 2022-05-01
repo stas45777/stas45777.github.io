@@ -1,0 +1,150 @@
+html {
+	font-size: 16px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Montserrat", monospace;
+}
+
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.container {
+	max-width: 1366px;
+	margin: 0 auto;
+}
+
+@media (max-width: 1411px) {
+	.container {
+		max-width: 1000px;
+	}
+}
+@media (max-width: 992px) {
+	.container {
+		max-width: none;
+		margin: 0 30px;
+	}
+}
+body{
+	background: #f1f1f1;
+	font-family: Roboto;
+}
+
+
+
+//   Главный блок с методами
+
+.main{
+	margin-top: 3rem;
+	margin-bottom: 3.75rem;
+	&__block{
+		display: flex;
+		flex-direction: column;
+		grid-gap: 2.5rem;
+		margin: 0 -10px;
+	}
+	&__card{
+		width: 100%;
+		display: flex;
+		@media (max-width:430px) {
+			flex-direction: column-reverse;
+		}
+		&__wrap{
+			height: inherit;
+			padding: 0 10px;
+			@media (max-width:450px) {
+				padding: 0;
+			}
+			&_75{
+				flex: 0 0 75%;
+				position: relative;
+				z-index: 2;
+				@media (max-width:1024px) {
+					flex: 70%;
+				}
+				@media (max-width:768px) {
+					flex: 65%;
+				}
+			}
+			&_25{
+				flex: 0 0 25%;
+				@media (max-width:1024px) {
+					flex: 0 0 30%;
+				}
+				@media (max-width:768px) {
+					flex: 0 0 35%;
+				}
+			}
+		}
+		&__title{
+			display: flex;
+			justify-content: space-between;
+			align-items: center; 
+		}
+		&__text{
+			font-weight: normal !important;
+			line-height: 1.6rem;
+			padding-right: 4rem;
+			@media (max-width:768px) {
+				padding-right: 0;
+			}
+		}
+		&__more{
+			display: flex;
+		}
+		&__info{
+			height: inherit;
+			background: linear-gradient(138.27deg, #FFFFFF 16.13%, #EEEEEE 85.12%);
+			box-shadow: 15.0196px 30.0392px 117.153px rgba(0, 0, 0, 0.05);
+			border-radius: 1.875rem;
+			display: flex;
+			flex-direction: column; 
+			padding: 4.6rem 3.75rem;
+			grid-gap: 2.5rem;
+			& span{
+				font-size: 1.6rem;
+			}
+			& .btn{
+				font-weight: 500;
+			}
+			@media (max-width:1440px) {
+				padding: 3rem 3rem;
+			}
+			@media (max-width:768px) {
+				grid-gap: 1.5rem;
+			}
+			@media (max-width:450px) {
+				padding: 2rem 3rem;
+			}
+		}
+		&__img{
+			height: 100%;
+			border-radius: 1.2rem;
+			border: 1px solid #FFFFFF;	
+			box-shadow: 10px 20px 78px rgba(0, 0, 0, 0.05);
+			overflow: hidden;
+			@media (max-width:430px) {
+				transform: translateY(30px);
+				max-height: 275px;
+			}
+			& img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+
+				@media (max-width:1440px) {
+					object-fit: cover;
+				}
+			}
+		}
+	}
+}

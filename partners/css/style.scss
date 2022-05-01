@@ -1,0 +1,77 @@
+.main{
+	position: relative;
+	margin-top: 40px;
+	padding-bottom: 4rem;
+	&_bg{
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	&__block{
+		display: flex;
+		margin: 0 -10px;
+		flex-wrap: wrap;
+		position: relative;
+		z-index: 2;
+
+	}
+	&__card{
+		display: flex;
+		flex-direction: column;
+		&__wrap{
+			padding: 0 10px;
+			flex: 0 0 50%;
+			margin-bottom: 2.5rem;
+		}
+		&__head{
+			display: flex;
+			align-items: center;
+			height: 5.3rem;
+		}
+		&__name{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			text-align: left;
+			height: 100%;	
+			margin-left: 1.3rem;	
+			padding-bottom: 0.4rem;
+		}
+		&__educ{
+			display: flex;
+			margin-top: 1.5rem;
+			&__main{
+				flex: 0 0 30%;
+				background: rgba(255, 255, 255, 0.7);
+				box-shadow: 5px 10px 39px rgba(0, 0, 0, 0.05);
+				backdrop-filter: blur(40px);
+				border-radius: 10px 0px 0px 10px;
+				height: 3.75rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			&__sub{
+				flex: 0 0 70%;
+				background: linear-gradient(138.27deg, #FFFFFF 16.13%, #EEEEEE 85.12%);
+				border-radius: 0px 10px 10px 0px;
+				height: 3.75rem;
+				position: relative;
+				z-index: 2;
+				transform: translateX(-10px);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+		&__info{
+			padding: 1.6rem 1.8rem;
+			background: linear-gradient(138.27deg, #FFFFFF 16.13%, #EEEEEE 85.12%);
+			box-shadow: 5px 10px 39px rgba(0, 0, 0, 0.05);
+			border-radius: 10px;
+			margin-top: 1.5rem;
+			line-height: 1rem;
+		}
+	}
+}

@@ -1,0 +1,120 @@
+.main {
+  position: relative;
+  margin-top: 40px;
+  padding-bottom: 4rem;
+}
+.main_bg {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.main__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 -10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+.main__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.main__card__wrap {
+  padding: 0 10px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  margin-bottom: 2.5rem;
+}
+.main__card__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 5.3rem;
+}
+.main__card__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: left;
+  height: 100%;
+  margin-left: 1.3rem;
+  padding-bottom: 0.4rem;
+}
+.main__card__educ {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1.5rem;
+}
+.main__card__educ__main {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: 5px 10px 39px rgba(0, 0, 0, 0.05);
+          box-shadow: 5px 10px 39px rgba(0, 0, 0, 0.05);
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
+  border-radius: 10px 0px 0px 10px;
+  height: 3.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.main__card__educ__sub {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 70%;
+          flex: 0 0 70%;
+  background: linear-gradient(138.27deg, #FFFFFF 16.13%, #EEEEEE 85.12%);
+  border-radius: 0px 10px 10px 0px;
+  height: 3.75rem;
+  position: relative;
+  z-index: 2;
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.main__card__info {
+  padding: 1.6rem 1.8rem;
+  background: linear-gradient(138.27deg, #FFFFFF 16.13%, #EEEEEE 85.12%);
+  -webkit-box-shadow: 5px 10px 39px rgba(0, 0, 0, 0.05);
+          box-shadow: 5px 10px 39px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  line-height: 1rem;
+}
